@@ -1,7 +1,5 @@
 package MVC;
 
-import SimpleFactory.Player;
-
 public class PlayerController {
     private Player model;
     private PlayerViews view;

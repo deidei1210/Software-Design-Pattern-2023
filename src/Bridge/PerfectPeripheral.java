@@ -1,7 +1,6 @@
 package Bridge;
 
 import FactoryMethod.Peripheral;
-import SimpleFactory.Player;
 
 public class PerfectPeripheral implements PeripheralWearer{
     @Override

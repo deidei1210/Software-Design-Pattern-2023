@@ -1,8 +1,5 @@
 package Filter;
 
-import SimpleFactory.Player;
-import SimpleFactory.PlayerFactory;
-
 import java.util.ArrayList;
 
 public class TestForCriteria {

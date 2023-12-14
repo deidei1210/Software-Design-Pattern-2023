@@ -1,8 +1,5 @@
 package TransferObject;
 
-import SimpleFactory.Player;
-import SimpleFactory.PlayerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 

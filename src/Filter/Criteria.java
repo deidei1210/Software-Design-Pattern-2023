@@ -1,8 +1,6 @@
 package Filter;
 
 
-import SimpleFactory.Player;
-
 import java.util.ArrayList;
 
 public interface Criteria {

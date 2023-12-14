@@ -1,7 +1,5 @@
 package ChainOfResponsibility;
 
-import SimpleFactory.Player;
-
 public class PlayerFighter extends AbstractOpponent {
 
     private Player player;

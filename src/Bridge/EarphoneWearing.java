@@ -1,7 +1,6 @@
 package Bridge;
 
 import FactoryMethod.Peripheral;
-import SimpleFactory.Player;
 
 public class EarphoneWearing extends PlayerPeripheral{
     public EarphoneWearing(PeripheralWearer peripheralWearer) {

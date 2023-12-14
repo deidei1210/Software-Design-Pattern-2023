@@ -1,7 +1,6 @@
 package Visitor;
 
 import Builder.Game;
-import Iterator.PlayerContainer;
 
 public class CVisitorFn {
     public static void VisitorFn(int player, Game game) {
