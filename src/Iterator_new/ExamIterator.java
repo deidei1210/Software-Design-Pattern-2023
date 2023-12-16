@@ -1,5 +1,7 @@
 package Iterator_new;
 
+import Builder_new.Exam;
+
 public class ExamIterator implements Iterator {
 
     private ExamContainer examsContainer;
