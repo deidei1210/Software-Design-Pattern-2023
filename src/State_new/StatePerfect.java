@@ -2,11 +2,11 @@ package State_new;
 
 public class StatePerfect extends StudentState {
     @Override
-    public void goCanteen() {
+    public void buyBook() {
     }
 
     @Override
-    public void attendGame() {
+    public void attendExam() {
         super.stateContext.setStudentState(new StateGood());
     }
 

@@ -8,9 +8,9 @@ public abstract class StudentState {
         this.stateContext = stateContext;
     }
 
-    public abstract void goCanteen();
+    public abstract void buyBook();
 
-    public abstract void attendGame();
+    public abstract void attendExam();
 
     public abstract double getState();
 }
