@@ -17,25 +17,37 @@ public abstract class Exam {
     private int[] rankByNO = new int[8];
     private int[] rankByRank = new int[8];
     private boolean isVisited;
+    private int numberOfQuestions; // 题目数量
+    private int examDuration; // 考试时间（分钟）
+
 
     public Exam(String Name) {
         name = Name;
-        switch (Name) {
+        switch (name) {
             case "高等数学":
+                //TODO: judge改成教师
                 judge = JudgeStore.getInstance().orderJudge("RRLL");
                 judge.setJudgeName("高等数学教学组");
+                numberOfQuestions = 20;
+                examDuration = 90;
                 break;
             case "计算机408":
                 judge = JudgeStore.getInstance().orderJudge("SCMWC");
                 judge.setJudgeName("计算机专业课教学组");
+                numberOfQuestions = 30;
+                examDuration = 120;
                 break;
             case "大学英语":
                 judge = JudgeStore.getInstance().orderJudge("SCHOF");
                 judge.setJudgeName("大学英语教学组");
+                numberOfQuestions = 25;
+                examDuration = 100;
                 break;
             case "大学政治":
                 judge = JudgeStore.getInstance().orderJudge("SCHOF");
                 judge.setJudgeName("大学政治教学组");
+                numberOfQuestions = 15;
+                examDuration = 75;
                 break;
             default:
                 break;
@@ -89,6 +101,15 @@ public abstract class Exam {
     public void setVisited(boolean visited) {
         isVisited = visited;
     }
+
+    public int getNumberOfQuestions() {return numberOfQuestions;}
+
+    public void setNumberOfQuestions(int numberOfQuestions) {this.numberOfQuestions = numberOfQuestions;}
+
+    public int getExamDuration() {return examDuration;}
+
+    public void setExamDuration(int examDuration) {this.examDuration = examDuration;}
+
     //排名
     public void sortScore() {
         for (int i = 0; i < 8; ++i) {
