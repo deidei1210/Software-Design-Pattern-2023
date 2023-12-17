@@ -6,7 +6,7 @@ import Decorator.Food;
 import java.util.Scanner;
 
 public class OrderCondiment {
-    //执行添加配料的控制台交互类
+    //执行添加教辅资料的控制台交互类
     private CareTaker myCare;
     private Food myFood;
 
