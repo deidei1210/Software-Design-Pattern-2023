@@ -1,6 +1,10 @@
 package Builder_new;
 
 import Iterator_new.ExamContainer;
+import TemplateAndStrategy_new.AdvancedMath;
+import TemplateAndStrategy_new.CollegeEnglish;
+import TemplateAndStrategy_new.CollegePolitics;
+import TemplateAndStrategy_new.ComputerBasics;
 import Template_Strategy.*;
 
 public class ExamsBuilder {
@@ -14,12 +18,9 @@ public class ExamsBuilder {
 
     //创建所有比赛
     public void buildExams() {
-        //TODO: 等hjr写完模版模式再加上
-//        ExamContainer.getInstance().add(new ForwardWatch("守望前锋：再也不来"));
-//        ExamContainer.getInstance().add(new HeroOfFan("风扇英雄"));
-//        ExamContainer.getInstance().add(new MagicWarCraft("魔怪争霸2"));
-//        ExamContainer.getInstance().add(new SeaCraft("星河争霸3"));
-//        ExamContainer.getInstance().add(new LoreOfLU("卢氏传说"));
-//        ExamContainer.getInstance().add(new Contest("对抗赛"));
+        ExamContainer.getInstance().add(new AdvancedMath("高等数学"));
+        ExamContainer.getInstance().add(new CollegeEnglish("大学英语"));
+        ExamContainer.getInstance().add(new CollegePolitics("大学政治"));
+        ExamContainer.getInstance().add(new ComputerBasics("计算机408"));
     }
 }

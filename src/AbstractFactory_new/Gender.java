@@ -1,4 +1,4 @@
-package AbdtractFactory_new;
+package AbstractFactory_new;
 
 public interface Gender {
     String toString();

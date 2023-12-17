@@ -1,6 +1,4 @@
-package AbdtractFactory_new;
-
-import AbstractFactory.GameFactory;
+package AbstractFactory_new;
 
 public class TeacherStore {
     //单例模式
