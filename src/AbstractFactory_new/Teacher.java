@@ -1,4 +1,4 @@
-package AbdtractFactory_new;
+package AbstractFactory_new;
 
 public class Teacher {
     private String TeacherName;
@@ -11,7 +11,7 @@ public class Teacher {
     public TeacherIngredientFactory getExamTypeFactory(){return ExamTypeFactory;}
     public TeacherIngredientFactory getGenderFactory(){return GenderFactory;}
 
-    public void setFactory(TeacherIngredientFactory EFactory,TeacherIngredientFactory GFactory)
+    public void setFactory(TeacherIngredientFactory EFactory, TeacherIngredientFactory GFactory)
     {
         this.ExamTypeFactory=EFactory;
         this.GenderFactory=GFactory;

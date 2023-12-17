@@ -1,6 +1,6 @@
-package AbdtractFactory_new;
+package AbstractFactory_new;
 
-public class ExamFactory implements TeacherIngredientFactory{
+public class ExamFactory implements TeacherIngredientFactory {
     @Override
     public ExamType CreateExam(String name){
         switch(name){

@@ -1,8 +1,8 @@
 package Builder_new;
 
-import AbstractFactory.Judge;
-import AbstractFactory.JudgeStore;
-import Iterator.JudgeContainer;
+import AbstractFactory_new.Teacher;
+import AbstractFactory_new.TeacherStore;
+import Iterator_new.TeacherContainer;
 import Iterator_new.StudentContainer;
 import SimpleFactory_new.Student;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class Exam {
     private String name;
     private List<Student> StudentLists = new ArrayList<Student>();
-    private Judge judge;
+    private Teacher teacher;
     private double[] score = new double[8];
     private int[] rankByNO = new int[8];
     private int[] rankByRank = new int[8];
@@ -25,34 +25,34 @@ public abstract class Exam {
         name = Name;
         switch (name) {
             case "高等数学":
-                //TODO: judge改成教师
-                judge = JudgeStore.getInstance().orderJudge("RRLL");
-                judge.setJudgeName("高等数学教学组");
+                //TODO: teacher改成教师
+                teacher = TeacherStore.getInstance().orderTeacher("RRLL");
+                teacher.setTeacherName("高等数学教学组");
                 numberOfQuestions = 20;
                 examDuration = 90;
                 break;
             case "计算机408":
-                judge = JudgeStore.getInstance().orderJudge("SCMWC");
-                judge.setJudgeName("计算机专业课教学组");
+                teacher = TeacherStore.getInstance().orderTeacher("SCMWC");
+                teacher.setTeacherName("计算机专业课教学组");
                 numberOfQuestions = 30;
                 examDuration = 120;
                 break;
             case "大学英语":
-                judge = JudgeStore.getInstance().orderJudge("SCHOF");
-                judge.setJudgeName("大学英语教学组");
+                teacher = TeacherStore.getInstance().orderTeacher("SCHOF");
+                teacher.setTeacherName("大学英语教学组");
                 numberOfQuestions = 25;
                 examDuration = 100;
                 break;
             case "大学政治":
-                judge = JudgeStore.getInstance().orderJudge("SCHOF");
-                judge.setJudgeName("大学政治教学组");
+                teacher = TeacherStore.getInstance().orderTeacher("SCHOF");
+                teacher.setTeacherName("大学政治教学组");
                 numberOfQuestions = 15;
                 examDuration = 75;
                 break;
             default:
                 break;
         }
-        JudgeContainer.getInstance().add(judge);
+        TeacherContainer.getInstance().add(teacher);
         for (int i = 0; i < 8; ++i) {
             addStudent(StudentContainer.getInstance().get(i));
         }
@@ -78,8 +78,8 @@ public abstract class Exam {
         return StudentLists;
     }
 
-    public Judge getJudge() {
-        return judge;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
     public double[] getScore() {
@@ -134,8 +134,8 @@ public abstract class Exam {
         for (int i = 1; i <= 8; ++i) {
             System.out.println("参加考试编号：" + i + "  姓名：" + StudentLists.get(i - 1).getStudentName());
         }
-        if (judge != null) {
-            System.out.println("本场出题教师：" + judge.getJudgeName());
+        if (teacher != null) {
+            System.out.println("本场出题教师：" + teacher.getTeacherName());
         }
     }
 }
