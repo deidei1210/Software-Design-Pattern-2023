@@ -7,11 +7,11 @@ public class Student {
     private Nationality studentNationality;
     private EducationalLevel studentEducationalLevel;
     //TODO: 思考通过什么类似下面的属性来决定考试分数
-//    private double reaction;
-//    private double handspeed;
-//    private double luck;
-//    private double endurance;
-//    private double intelligence;
+    private double reaction;
+    private double handspeed;
+    private double luck;
+    private double endurance;
+    private double intelligence;
     private StudentState studentState;
     private int[] Rank;
     private double[] Score;
@@ -24,6 +24,12 @@ public class Student {
         studentEducationalLevel = educationalLevel;
         studentNationality = nationality;
         studentName = studentNationality.getNationality() + studentEducationalLevel.getEducationalLevel();
+        // 临时设置成这样（by hjr），仅为方便别的类开发用
+        reaction = 106;
+        handspeed = 98;
+        luck = 96;
+        endurance = 104;
+        intelligence = 100;
 //        if (educationalLevel.getEducationalLevel() == "IG") {
 //            reaction = 106;
 //            handspeed = 98;
@@ -46,45 +52,45 @@ public class Student {
     }
 
     //getter & stter
-//    public double getReaction() {
-//        return reaction;
-//    }
-//
-//    public void setReaction(double reaction) {
-//        this.reaction = reaction;
-//    }
-//
-//    public double getHandspeed() {
-//        return handspeed;
-//    }
-//
-//    public void setHandspeed(double handspeed) {
-//        this.handspeed = handspeed;
-//    }
-//
-//    public double getLuck() {
-//        return luck;
-//    }
-//
-//    public void setLuck(double luck) {
-//        this.luck = luck;
-//    }
-//
-//    public double getEndurance() {
-//        return endurance;
-//    }
-//
-//    public void setEndurance(double endurance) {
-//        this.endurance = endurance;
-//    }
-//
-//    public double getIntelligence() {
-//        return intelligence;
-//    }
-//
-//    public void setIntelligence(double intelligence) {
-//        this.intelligence = intelligence;
-//    }
+    public double getReaction() {
+        return reaction;
+    }
+
+    public void setReaction(double reaction) {
+        this.reaction = reaction;
+    }
+
+    public double getHandspeed() {
+        return handspeed;
+    }
+
+    public void setHandspeed(double handspeed) {
+        this.handspeed = handspeed;
+    }
+
+    public double getLuck() {
+        return luck;
+    }
+
+    public void setLuck(double luck) {
+        this.luck = luck;
+    }
+
+    public double getEndurance() {
+        return endurance;
+    }
+
+    public void setEndurance(double endurance) {
+        this.endurance = endurance;
+    }
+
+    public double getIntelligence() {
+        return intelligence;
+    }
+
+    public void setIntelligence(double intelligence) {
+        this.intelligence = intelligence;
+    }
 
 
     public String getStudentName() {
