@@ -2,9 +2,9 @@ package Decorator_new;
 
 import Memento.Memento;
 
-public class Food {
+public class Book {
     //食物类（被装饰者）
-    public String condiment = "";       //添加配料的描述
+    public String studyMaterials = "";       //添加配料的描述
 
     //获取添加的配料信息
     public String getDescription() {
@@ -13,11 +13,11 @@ public class Food {
 
     //设置备份
     public Memento createMemento() {
-        return new Memento(condiment);
+        return new Memento(studyMaterials);
     }
 
     //获取备份
-    public String getFromMemento(Memento memento) {
+    public String getFromMemento(@org.jetbrains.annotations.NotNull Memento memento) {
         return memento.getCondiment();
     }
 }
