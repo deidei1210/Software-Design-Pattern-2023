@@ -6,7 +6,7 @@ public class AliPay {
     //支付宝的特殊支付模式
 
     Scanner scan = new Scanner(System.in);
-    private int type, money;
+    private final int type;
 
     public AliPay() {
         System.out.println("你选择了使用Alipay支付");
@@ -14,6 +14,7 @@ public class AliPay {
     }
 
     public void specialPay() {
+        int money;
         if (type == 1) {
             System.out.println("选择余额付款");
             money = 100;

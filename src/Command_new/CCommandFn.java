@@ -1,7 +1,7 @@
 package Command_new;
 
-import Adapter.AliAdapter;
-import Adapter.WechatPay;
+import Adapter_new.AliAdapter;
+import Adapter_new.WechatPay;
 import Memento_new.CareTaker;
 import Decorator_new.Book;
 import Interpreter.ExchangePrice;

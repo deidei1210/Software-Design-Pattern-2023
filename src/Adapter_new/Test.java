@@ -1,15 +1,12 @@
 package Adapter_new;
 
-import Adapter.AliAdapter;
-import Adapter.WechatPay;
-
 import java.util.Scanner;
 
 public class Test {
-    public static void main(String arg[]) {
+    public static void main(String[] arg) {
         Scanner scan = new Scanner(System.in);
         int type;
-        System.out.println("请选择你要使用的支付方式：\n1、Ali支付  2、WeChat支付");
+        System.out.println("请选择你要使用的支付方式：\n1、Ali支付  2、WeChat支付 3、银行卡支付");
         type = scan.nextInt();
         switch (type) {
             case 1: {
@@ -18,6 +15,10 @@ public class Test {
             }
             case 2: {
                 new WechatPay().pay();
+                break;
+            }
+            case 3:{
+                new CardPay().pay();
                 break;
             }
         }

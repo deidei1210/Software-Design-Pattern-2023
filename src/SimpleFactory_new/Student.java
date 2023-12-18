@@ -3,9 +3,9 @@ package SimpleFactory_new;
 import State_new.StudentState;
 
 public class Student {
-    private String studentName;
-    private Nationality studentNationality;
-    private EducationalLevel studentEducationalLevel;
+    private String studentName;                         //学生的姓名
+    private Nationality studentNationality;             //学生的国籍（真的会有外国人使用系统吗？
+    private EducationalLevel studentEducationalLevel;    
     //TODO: 思考通过什么类似下面的属性来决定考试分数
     private double reaction;
     private double handspeed;
