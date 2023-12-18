@@ -1,7 +1,7 @@
 package Memento_new;
 
-import Command.Command;
-import Decorator.Food;
+import Command_new.Command;
+import Decorator_new.Book;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -23,10 +23,10 @@ public class CareTaker {
     //如果undo,将备忘录栈最近状态pop出栈，同时commands最新命令出栈，并入栈redoCommands
     public void undo() {
         if (mementoIndex > 0) {
-            Food drink = commands.getLast().getMyFood();
+            Book drink = commands.getLast().getMyFood();
             redoCommands.push(commands.pop());
             mementoIndex--;
-            drink.condiment = drinkOrderList.get(mementoIndex).getCondiment();
+            drink.studyMaterials = drinkOrderList.get(mementoIndex).getStudyMaterials();
         } else {
             System.out.println("No commands left!");
         }

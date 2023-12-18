@@ -2,13 +2,13 @@ package Memento_new;
 
 public class Memento {
     //备忘录
-    private String condiment;       //配料描述
+    private final String studyMaterials;       //配料描述
 
-    public Memento(String condiment) {
-        this.condiment = condiment;
+    public Memento(String studyMaterial) {
+        this.studyMaterials = studyMaterial;
     }
 
-    public String getCondiment() {
-        return condiment;
+    public String getStudyMaterials() {
+        return studyMaterials;
     }
 }

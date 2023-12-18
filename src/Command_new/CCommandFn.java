@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class CCommandFn {
     //单例模式
     //执行饮品台控制台交互的类
-    private static CCommandFn instance = new CCommandFn();
+    private static final CCommandFn instance = new CCommandFn();
 
     private CCommandFn() {
     }
@@ -36,33 +36,33 @@ public class CCommandFn {
                 case 1: {
                     //填腹一饼
                     CareTaker orderList = new CareTaker();
-                    Command orderPancake = new OrderPancakeCommand();
+                    Command orderPancake = new OrderMathBookCommand();
                     orderPancake.execute();
                     Food myPancake = orderPancake.getMyFood();
                     orderList.append(orderPancake, myPancake.createMemento());
-                    OrderCondiment pancakeCondiment = new OrderCondiment(orderList, myPancake);
+                    OrderStudyMaterials pancakeCondiment = new OrderStudyMaterials(orderList, myPancake);
                     isOrder = pancakeCondiment.start();
                     break;
                 }
                 case 2: {
                     //肉蛋葱鸡
                     CareTaker orderList = new CareTaker();
-                    Command orderMeat = new OrderMeatCommand();
+                    Command orderMeat = new OrderPoliticBookCommand();
                     orderMeat.execute();
                     Food myMeat = orderMeat.getMyFood();
                     orderList.append(orderMeat, myMeat.createMemento());
-                    OrderCondiment meatCondiment = new OrderCondiment(orderList, myMeat);
+                    OrderStudyMaterials meatCondiment = new OrderStudyMaterials(orderList, myMeat);
                     isOrder = meatCondiment.start();
                     break;
                 }
                 case 3: {
                     //益肝青苔
                     CareTaker orderList = new CareTaker();
-                    Command orderGarlic = new OrderGarlicCommand();
+                    Command orderGarlic = new OrderEnglishBookCommand();
                     orderGarlic.execute();
                     Food myGarlic = orderGarlic.getMyFood();
                     orderList.append(orderGarlic, myGarlic.createMemento());
-                    OrderCondiment garlicCondiment = new OrderCondiment(orderList, myGarlic);
+                    OrderStudyMaterials garlicCondiment = new OrderStudyMaterials(orderList, myGarlic);
                     isOrder = garlicCondiment.start();
                     break;
                 }

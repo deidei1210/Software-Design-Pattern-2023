@@ -1,6 +1,6 @@
 package Decorator_new;
 
-import Memento.Memento;
+import Memento_new.Memento;
 
 public class Book {
     //食物类（被装饰者）
@@ -12,12 +12,12 @@ public class Book {
     }
 
     //设置备份
-    public Memento createMemento() {
+    public Memento_new.Memento createMemento() {
         return new Memento(studyMaterials);
     }
 
     //获取备份
     public String getFromMemento(@org.jetbrains.annotations.NotNull Memento memento) {
-        return memento.getCondiment();
+        return memento.getStudyMaterials();
     }
 }
