@@ -2,8 +2,8 @@ package Command_new;
 
 import Adapter.AliAdapter;
 import Adapter.WechatPay;
-import Memento.CareTaker;
-import Decorator.Food;
+import Memento_new.CareTaker;
+import Decorator_new.Book;
 import Interpreter.ExchangePrice;
 import Interpreter.OriginalPrice;
 import Interpreter.Price;
@@ -25,7 +25,7 @@ public class CCommandFn {
     public boolean CommandFn() throws InterruptedException {
 
         System.out.println("\n欢迎来到嘉年华大食堂(芜湖赞助)，您今天想吃什么？");
-        System.out.println("[0]跑路 [1]填腹一饼 [2]肉蛋葱鸡 [3]益肝青苔:");
+        System.out.println("[0]跑路 [1]2025考研数学武忠祥 [2]考研政治肖秀荣 [3]考研英语红宝书:");
         int i;
         Scanner scan_input = new Scanner(System.in);
         i = scan_input.nextInt();
@@ -34,36 +34,36 @@ public class CCommandFn {
             if (i == 0) break;
             switch (i) {
                 case 1: {
-                    //填腹一饼
+                    //2025考研数学武忠祥
                     CareTaker orderList = new CareTaker();
-                    Command orderPancake = new OrderMathBookCommand();
-                    orderPancake.execute();
-                    Food myPancake = orderPancake.getMyFood();
-                    orderList.append(orderPancake, myPancake.createMemento());
-                    OrderStudyMaterials pancakeCondiment = new OrderStudyMaterials(orderList, myPancake);
-                    isOrder = pancakeCondiment.start();
+                    Command orderMathBook = new OrderMathBookCommand();
+                    orderMathBook.execute();
+                    Book myMathBook = orderMathBook.getMyBook();
+                    orderList.append(orderMathBook, myMathBook.createMemento());
+                    OrderStudyMaterials MathBookStudyMaterials = new OrderStudyMaterials(orderList, myMathBook);
+                    isOrder = MathBookStudyMaterials.start();
                     break;
                 }
                 case 2: {
-                    //肉蛋葱鸡
+                    //考研政治肖秀荣
                     CareTaker orderList = new CareTaker();
-                    Command orderMeat = new OrderPoliticBookCommand();
-                    orderMeat.execute();
-                    Food myMeat = orderMeat.getMyFood();
-                    orderList.append(orderMeat, myMeat.createMemento());
-                    OrderStudyMaterials meatCondiment = new OrderStudyMaterials(orderList, myMeat);
-                    isOrder = meatCondiment.start();
+                    Command orderPoliticBook = new OrderPoliticBookCommand();
+                    orderPoliticBook.execute();
+                    Book myPoliticBook = orderPoliticBook.getMyBook();
+                    orderList.append(orderPoliticBook, myPoliticBook.createMemento());
+                    OrderStudyMaterials politicBookStudyMaterials = new OrderStudyMaterials(orderList, myPoliticBook);
+                    isOrder = politicBookStudyMaterials.start();
                     break;
                 }
                 case 3: {
-                    //益肝青苔
+                    //考研英语红宝书
                     CareTaker orderList = new CareTaker();
-                    Command orderGarlic = new OrderEnglishBookCommand();
-                    orderGarlic.execute();
-                    Food myGarlic = orderGarlic.getMyFood();
-                    orderList.append(orderGarlic, myGarlic.createMemento());
-                    OrderStudyMaterials garlicCondiment = new OrderStudyMaterials(orderList, myGarlic);
-                    isOrder = garlicCondiment.start();
+                    Command orderEnglishBook = new OrderEnglishBookCommand();
+                    orderEnglishBook.execute();
+                    Book myEnglishBook = orderEnglishBook.getMyBook();
+                    orderList.append(orderEnglishBook, myEnglishBook.createMemento());
+                    OrderStudyMaterials englishBookStudyMaterials = new OrderStudyMaterials(orderList, myEnglishBook);
+                    isOrder = englishBookStudyMaterials.start();
                     break;
                 }
                 default:
@@ -72,7 +72,7 @@ public class CCommandFn {
             i = 0;
             if (!isOrder) {
                 System.out.println("\n欢迎来到嘉年华大食堂(芜湖赞助)，您今天想吃什么？");
-                System.out.println("[0]跑路 [1]填腹一饼 [2]肉蛋葱鸡 [3]益肝青苔:");
+                System.out.println("[0]跑路 [1]2025考研数学武忠祥 [2]考研政治肖秀荣 [3]考研英语红宝书:");
                 i = scan_input.nextInt();
             }
         }
