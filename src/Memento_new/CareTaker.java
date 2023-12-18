@@ -9,9 +9,9 @@ import java.util.ArrayList;
 public class CareTaker {
     //一个用于维护命令和备忘录的类
     private int mementoIndex = -1;
-    private ArrayList<Memento> drinkOrderList = new ArrayList<Memento>();  //备忘录栈
-    private ArrayDeque<Command> redoCommands = new ArrayDeque<>();    //redo命令栈
-    private ArrayDeque<Command> commands = new ArrayDeque<>();    //命令栈
+    private final ArrayList<Memento> drinkOrderList = new ArrayList<Memento>();  //备忘录栈
+    private final ArrayDeque<Command> redoCommands = new ArrayDeque<>();    //redo命令栈
+    private final ArrayDeque<Command> commands = new ArrayDeque<>();    //命令栈
 
     //如果有了新的order，将新的drink状态保存在Memento中
     public void append(Command command, Memento memento) {
@@ -23,7 +23,7 @@ public class CareTaker {
     //如果undo,将备忘录栈最近状态pop出栈，同时commands最新命令出栈，并入栈redoCommands
     public void undo() {
         if (mementoIndex > 0) {
-            Book drink = commands.getLast().getMyFood();
+            Book drink = commands.getLast().getMyBook();
             redoCommands.push(commands.pop());
             mementoIndex--;
             drink.studyMaterials = drinkOrderList.get(mementoIndex).getStudyMaterials();
