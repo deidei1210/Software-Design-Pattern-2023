@@ -11,7 +11,7 @@ public class tabletComputerBuying extends studentSupply {
     @Override
     public void supplyBuy(Student student, Supplies supplies)  {
         super.supplyBuy(student, supplies);
-//        player.setReaction(player.getReaction() + 3);
-//        player.setHandspeed(player.getHandspeed() + 2);
+        student.setReaction(student.getReaction() + 3);
+        student.setHandspeed(student.getHandspeed() + 2);
     }
 }

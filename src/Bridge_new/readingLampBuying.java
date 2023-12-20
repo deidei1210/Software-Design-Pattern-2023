@@ -12,7 +12,7 @@ public class readingLampBuying extends studentSupply {
     @Override
     public void supplyBuy(Student student, Supplies supplies) {
         super.supplyBuy(student, supplies);
-//        Student.setReaction(Student.getReaction() + 3);
-//        Student.setEndurance(Student.getEndurance() + 2);
+        student.setReaction(student.getReaction() + 3);
+        student.setEndurance(student.getEndurance() + 2);
     }
 }

@@ -11,7 +11,7 @@ public class studyChairBuying extends studentSupply {
     @Override
     public void supplyBuy(Student student, Supplies supplies)  {
         super.supplyBuy(student, supplies);
-//        player.setHandspeed(player.getHandspeed() + 3);
-//        player.setEndurance(player.getEndurance() + 2);
+        student.setHandspeed(student.getHandspeed() + 3);
+        student.setEndurance(student.getEndurance() + 2);
     }
 }
