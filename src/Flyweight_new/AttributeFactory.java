@@ -1,9 +1,9 @@
 package Flyweight_new;
 
-import Prototype.MathMember;
-import Prototype.Member;
-import Prototype.PoliticsMember;
-import Prototype.EnglishMember;
+import Prototype_new.MathMember;
+import Prototype_new.Member;
+import Prototype_new.PoliticsMember;
+import Prototype_new.EnglishMember;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;

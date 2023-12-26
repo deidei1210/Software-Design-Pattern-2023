@@ -1,39 +1,12 @@
 package Singleton_LazyInitialization;
 
-import Bridge.*;
-import Builder.Game;
-import Builder.GamesBuilder;
 import Builder_new.Exam;
 import Builder_new.ExamsBuilder;
-import Command.CCommandFn;
-import Composite.Menu;
-import Composite.MenuOption;
-import Facade.Facade;
-import FactoryMethod.EarphoneFactory;
-import FactoryMethod.KeyboardFactory;
-import FactoryMethod.MousePeripheralFactory;
-import FactoryMethod.Peripheral;
-import Iterator.GameContainer;
-import Iterator.PlayerContainer;
-import Mediator.CMediatorFn;
-import Prototype.PrototypeFunction;
-import Proxy.ProxyScoreSheet;
-import Proxy.ScoreSheet;
-import Servant.Preparation;
-import Servant.Worker;
-import SimpleFactory.Player;
-import SimpleFactory.PlayerFactory;
-import State.StateGood;
-import State.StatePerfect;
-import Template_Strategy.*;
-import Visitor.CVisitorFn;
 
 import SimpleFactory_new.Student;
 import SimpleFactory_new.StudentFactory;
 import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
-import Builder.Game;
-import Builder.GamesBuilder;
 
 import java.util.Scanner;
 

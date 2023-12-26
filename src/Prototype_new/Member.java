@@ -1,4 +1,4 @@
-package Prototype;
+package Prototype_new;
 
 public abstract class Member implements Cloneable{
     public String school;

@@ -1,11 +1,11 @@
-package Flyweight;
+package Flyweight_new;
 
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import Prototype.Member;
+import Prototype_new.Member;
 
 public class MemberFlyweight {
     private static final String[] School = {
@@ -54,7 +54,7 @@ public class MemberFlyweight {
                 SchoolCounter.get(str).put(school, SchoolCounter.get(str).get(school) + 1);
                 GroupMemberCounter.put(str, GroupMemberCounter.get(str) + 1);
                 counter++;
-                Member groupMember = Flyweight.AttributeFactory.setMember(str,school);
+                Member groupMember = AttributeFactory.setMember(str,school);
                 groupMember.setAge(getRandomAge());
                 groupMember.setSex(getRandomSex());
                 groupMember.printSubject();

@@ -1,4 +1,4 @@
-package Prototype;
+package Prototype_new;
 
 public class PoliticsMember extends Member {
     public PoliticsMember() {

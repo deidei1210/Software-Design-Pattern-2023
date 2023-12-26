@@ -1,6 +1,6 @@
 package Prototype_new;
 
-import Prototype.Member;
+import Prototype_new.Member;
 
 public class EnglishMember extends Member {
     public EnglishMember() {
