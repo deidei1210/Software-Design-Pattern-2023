@@ -4,7 +4,7 @@ import State_new.StudentState;
 
 public class Student {
     private String studentName;                         //学生的姓名
-    private Nationality studentNationality;             //学生的国籍（真的会有外国人使用系统吗？
+    private TargetMajor studentTargetMajor;             //学生的目标专业
     private EducationalLevel studentEducationalLevel;    
     //TODO: 思考通过什么类似下面的属性来决定考试分数
     private double reaction;
@@ -16,16 +16,16 @@ public class Student {
     private int[] Rank;
     private double[] Score;
 
-    private String major;
+    private String targetMajor;
 
     public Student() {
     }
 
     //构造函数（不会调用，仅作为比较）
-    private Student(EducationalLevel educationalLevel, Nationality nationality) {
+    private Student(EducationalLevel educationalLevel, TargetMajor targetMajor) {
         studentEducationalLevel = educationalLevel;
-        studentNationality = nationality;
-        studentName = studentNationality.getNationality() + studentEducationalLevel.getEducationalLevel();
+        studentTargetMajor = targetMajor;
+        studentName = studentTargetMajor.getTargetMajor() + studentEducationalLevel.getEducationalLevel();
         // 临时设置成这样（by hjr），仅为方便别的类开发用
         reaction = 106;
         handspeed = 98;
@@ -87,13 +87,13 @@ public class Student {
     }
 
     //获取学生的国籍
-    public Nationality getStudentNationality() {
-        return studentNationality;
+    public TargetMajor getStudentTargetMajor() {
+        return studentTargetMajor;
     }
 
     //设置学生的国籍
-    public void setStudentNationality(Nationality animalNationality) {
-        this.studentNationality = animalNationality;
+    public void setStudentNationality(TargetMajor animalTargetMajor) {
+        this.studentTargetMajor = animalTargetMajor;
     }
 
     //获取学生的教育程度
@@ -138,18 +138,18 @@ public class Student {
 
     //设置学生的专业
     public void setStudentMjor(String major){
-        this.major=major;
+        this.targetMajor=major;
     }
     //获取学生的专业
     public String getStudentMajor(){
-        return this.major;
+        return this.targetMajor;
     }
 
     //输出测试信息
     public void showStudentInfo() {
         System.out.println("Name is " + studentName + "!");
         studentEducationalLevel.getEducationalLevel();
-        studentNationality.getNationality();
+        studentTargetMajor.getTargetMajor();
     }
 
 }

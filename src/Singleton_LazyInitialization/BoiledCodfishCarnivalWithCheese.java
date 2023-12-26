@@ -49,30 +49,40 @@ public class BoiledCodfishCarnivalWithCheese {
 
     //流程控制器
     public void flowController() throws CloneNotSupportedException {
-        System.out.println("欢迎来到芝士煲鳕嘉年华！");
+        System.out.println("欢迎来到顶峰考研云在线考研模拟考试系统！");
         Scanner input = new Scanner(System.in);
-        //创建玩家
+        //学生注册
         System.out.println("请输入你的名字：");
         String name = input.nextLine();
-        System.out.println("选择你的俱乐部 [1]EDG [2]IG [3]RNG");
-        int clubNum = input.nextInt();
+
+        //选择你的考研目标专业
+        System.out.println("选择你的目标专业 [1]Software Engineering [2]Computer Science [3]Artificial Intelligence [4]Other");
+        int majorNum = input.nextInt();
         System.out.println("选择你的国籍 [1]China [2]America [3]Japan");
         int nationNum = input.nextInt();
-        String club = "EDG";
+
+        //选择的目标专业
+        String major = "Software Engineering";
         String nation = "China";
-        switch (clubNum) {
+
+        //根据用户的选择进行major的赋值
+        switch (majorNum) {
             case 1:
-                club = "EDG";
+                major = "Software Engineering";
                 break;
             case 2:
-                club = "IG";
+                major = "Computer Science";
                 break;
             case 3:
-                club = "RNG";
+                major = "Artificial Intelligence";
+                break;
+            case 4:
+                major = "Other";
                 break;
             default:
                 break;
         }
+
         switch (nationNum) {
             case 1:
                 nation = "China";
@@ -86,8 +96,10 @@ public class BoiledCodfishCarnivalWithCheese {
             default:
                 break;
         }
+
+        
         PlayerFactory playerFactory = new PlayerFactory();
-        player = playerFactory.createPlayer(club, nation);
+        player = playerFactory.createPlayer(major, nation);
         player.setPlayerName(name);
         PlayerContainer.getInstance().add(player);
         //创建NPC玩家
