@@ -3,8 +3,6 @@ package Singleton_LazyInitialization;
 import Bridge.*;
 import Builder.Game;
 import Builder.GamesBuilder;
-import Builder_new.Exam;
-import Builder_new.ExamsBuilder;
 import Command.CCommandFn;
 import Composite.Menu;
 import Composite.MenuOption;
@@ -32,8 +30,10 @@ import SimpleFactory_new.Student;
 import SimpleFactory_new.StudentFactory;
 import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
-import Builder.Game;
-import Builder.GamesBuilder;
+import Builder_new.Exam;
+import Builder_new.ExamsBuilder;
+
+import Facade_new.ExamFacade;
 
 import java.util.Scanner;
 
@@ -122,9 +122,9 @@ public class BoiledCodfishCarnivalWithCheese {
         for (Exam exam : ExamContainer.getInstance().getExams()) {
             exam.showExamInfo();
         }
-//        //玩家检入
-//        Facade facade = new Facade();
-//        facade.method();
+        //学生检入
+        ExamFacade facade = new ExamFacade();
+        facade.method();
 //        //比赛正式开始
 //        //设置测试用菜单
 //        Menu rootMenu = new Menu("大厅选择");

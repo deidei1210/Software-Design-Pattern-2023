@@ -1,12 +1,13 @@
 package SimpleFactory_new;
 
 import State_new.StateGood;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
 public class StudentFactory {
     //创建并初始化学生
-    public static Student createStudent(String targetMajor,String educationalLevel) {
+    public static @NotNull Student createStudent(String targetMajor, String educationalLevel) {
         Random r = new Random();
         StudentIngredientFactory studentIngredientFactory = new StudentIngredientFactory();
         //创建一个Student类
