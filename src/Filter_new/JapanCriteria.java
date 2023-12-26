@@ -11,7 +11,7 @@ public class JapanCriteria implements Criteria {
         ArrayList<Student> japanstudent = new ArrayList<>();
 
         for (Student student : studentList) {
-            if (student.getStudentTargetMajor() == "Japan") {
+            if (student.getStudentTargetMajor().getTargetMajor() == "Japan") {
                 studentList.add(student);
             }
         }

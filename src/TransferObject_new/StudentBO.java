@@ -1,5 +1,8 @@
 package TransferObject_new;
 
+import SimpleFactory_new.Student;
+import SimpleFactory_new.StudentFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 

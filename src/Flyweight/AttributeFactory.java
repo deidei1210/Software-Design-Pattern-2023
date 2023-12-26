@@ -1,42 +1,49 @@
 package Flyweight;
 
-import Prototype.MathMember;
-import Prototype.Member;
-import Prototype.PoliticsMember;
-import Prototype.EnglishMember;
+import Prototype.EDGFans;
+import Prototype.Fans;
+import Prototype.IGFans;
+import Prototype.RNGFans;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
-import java.util.Map;
 
 public class AttributeFactory {
-    private static final Map<String, Map<String,Member>> GroupMemberMap = Map.of(
-            "Math",new HashMap<>(),
-            "English",new HashMap<>(),
-            "Politics",new HashMap<>()
-    );
-    private static final Map<String, Type> MemberType = Map.of(
-            "Math",MathMember.class,
-            "English",EnglishMember.class,
-            "Politics",PoliticsMember.class
-    );
-    public static Member setMember(String subject,String school){
-        Member member = GroupMemberMap.get(subject).get(school);
-        if(member == null){
-            switch(subject){
-                case "Math":
-                    member = new MathMember(school);
-                    break;
-                case "English":
-                    member = new EnglishMember(school);
-                    break;
-                case "Politics":
-                    member = new PoliticsMember(school);
-                    break;
-            }
-            GroupMemberMap.get(subject).put(school,member);
-            System.out.println("Here is the first "+ subject +" Member in "+school );
+    private static final HashMap<String, Fans> edgFansMap = new HashMap<>();
+    private static final HashMap<String, Fans> igFansMap = new HashMap<>();
+    private static final HashMap<String, Fans> rngFansMap = new HashMap<>();
+
+    //生成一个ENG
+    public static Fans setEDGFans(String nation) {
+        EDGFans edgFans = (EDGFans) edgFansMap.get(nation);
+        if (edgFans == null) {
+            edgFans = new EDGFans(nation);
+            edgFansMap.put(nation, edgFans);
+            System.out.println("Here is the first " + nation + " EDGFans");
         }
-        return member;
+        return edgFans;
+    }
+
+    //生成一个IG
+    public static Fans setIGFans(String nation) {
+        IGFans igFans = (IGFans) igFansMap.get(nation);
+
+        if (igFans == null) {
+            igFans = new IGFans(nation);
+            igFansMap.put(nation, igFans);
+            System.out.println("Here is the first " + nation + " IGFans");
+        }
+        return igFans;
+    }
+
+    //生成一个RNG
+    public static Fans setRNGFans(String nation) {
+        RNGFans rngFans = (RNGFans) rngFansMap.get(nation);
+
+        if (rngFans == null) {
+            rngFans = new RNGFans(nation);
+            rngFansMap.put(nation, rngFans);
+            System.out.println("Here is the first " + nation + " RNGFans");
+        }
+        return rngFans;
     }
 }

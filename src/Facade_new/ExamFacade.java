@@ -17,8 +17,8 @@ public class ExamFacade {
         checkIn = new CheckIn();
     }
 
-    // 提供给外部访问的方法，完成整个检入流程
-    public void method() {
+    // 提供给外部访问的方法，完成整个考试流程
+    public void completeExamProcess() {
         signUp.doSomething();
         lineUp.doSomething();
         infoCheck.doSomething();

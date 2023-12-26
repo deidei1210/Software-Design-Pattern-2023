@@ -1,4 +1,4 @@
-package SimpleFactory_new;
+package SimpleFactory;
 
 public interface Nationality {
     String getNationality();

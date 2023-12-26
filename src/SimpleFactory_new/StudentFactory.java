@@ -1,55 +1,41 @@
 package SimpleFactory_new;
 
 import State_new.StateGood;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
 public class StudentFactory {
     //创建并初始化学生
-    public static @NotNull Student createStudent(String targetMajor, String educationalLevel) {
+    public static Student createStudent(String targetMajor,String educationalLevel) {
         Random r = new Random();
-        StudentIngredientFactory gameIngredientFactory = new StudentIngredientFactory();
+        StudentIngredientFactory studentIngredientFactory = new StudentIngredientFactory();
+        //创建一个Student类
         Student student = new Student();
-        student.setStudentEducationalLevel(gameIngredientFactory.setEducationalLevel(educationalLevel));
-        student.setStudentNationality(gameIngredientFactory.setNationality(nationality));
+        student.setStudentEducationalLevel(studentIngredientFactory.setEducationalLevel(educationalLevel));
+        student.setStudentTargetMajor(studentIngredientFactory.setTargetMajor(targetMajor));
 
-        //根据国籍随机名字
+        //随机生成学生的名字
         String studentName;
-        if(nationality.equals("Domestic"))
-            studentName = RandomNameGenerator.generateRandomChineseName();
-        else
-            studentName = RandomNameGenerator.generateRandomEnglishName();
+        studentName = RandomNameGenerator.generateRandomChineseName();
         student.setStudentName(studentName);
 
-//        if (student.getStudentEducationalLevel().getEducationalLevel() == "IG") {
-//            student.setReaction(106+(r.nextInt(20)-10));
-//            student.setHandspeed(98+(r.nextInt(20)-10));
-//            student.setLuck(94+(r.nextInt(20)-10));
-//            student.setEndurance(104+(r.nextInt(20)-10));
-//            student.setIntelligence(100+(r.nextInt(20)-10));
-//        } else if (student.getStudentEducationalLevel().getEducationalLevel() == "EDG") {
-//            student.setReaction(103+(r.nextInt(10)-5));
-//            student.setHandspeed(99+(r.nextInt(10)-5));
-//            student.setLuck(100+(r.nextInt(10)-5));
-//            student.setEndurance(101+(r.nextInt(10)-5));
-//            student.setIntelligence(95+(r.nextInt(10)-5));
-//        } else if (student.getStudentEducationalLevel().getEducationalLevel() == "RNG") {
-//            student.setReaction(98+(r.nextInt(14)-7));
-//            student.setHandspeed(104+(r.nextInt(14)-7));
-//            student.setLuck(99+(r.nextInt(14)-7));
-//            student.setEndurance(108+(r.nextInt(14)-7));
-//            student.setIntelligence(102+(r.nextInt(14)-7));
-//        }
+        //设置学生的排名
         student.setRank(new int[]{0, 0, 0});
+        //设置学生的分数
         student.setScore(new double[]{0, 0, 0});
+        //设置学生的状态，初始状态为good
         student.setStudentState(new StateGood());
         return student;
     }
-    public class RandomNameGenerator {
+
+    //随机姓名生成器
+    public static class RandomNameGenerator {
+        //测试
         public static void main(String[] args) {
-            String randomName = generateRandomEnglishName();
-            System.out.println("Random English Name: " + randomName);
+            String randomEnglishName = generateRandomEnglishName();
+            String randomChineseName = generateRandomChineseName();
+            System.out.println("Random English Name: " + randomEnglishName);
+            System.out.println("Random Chinese Name: " + randomChineseName);
         }
 
         public static String generateRandomEnglishName() {
