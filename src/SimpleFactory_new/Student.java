@@ -87,13 +87,13 @@ public class Student {
     }
 
     //获取学生的国籍
-    public TargetMajor getStudentTargetMajor() {
-        return studentTargetMajor;
+    public String getStudentTargetMajor() {
+        return studentTargetMajor.getTargetMajor();
     }
 
     //设置学生的国籍
-    public void setStudentTargetMajor(TargetMajor animalTargetMajor) {
-        this.studentTargetMajor = animalTargetMajor;
+    public void setStudentTargetMajor(TargetMajor TargetMajor) {
+        this.studentTargetMajor = TargetMajor;
     }
 
     //获取学生的教育程度

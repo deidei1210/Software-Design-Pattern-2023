@@ -9,7 +9,7 @@ public class SECriteria implements Criteria {
     public ArrayList<Student> meetCriteria(ArrayList<Student> studentList) {
         ArrayList<Student> SEstudent = new ArrayList<>();
         for (Student student : studentList) {
-            if (student.getStudentMajor() == "软件工程") {
+            if (student.getStudentMajor() == "Software Engineering") {
                 SEstudent.add(student);
             }
         }
