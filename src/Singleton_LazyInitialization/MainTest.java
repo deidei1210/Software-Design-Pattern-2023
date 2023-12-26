@@ -33,10 +33,8 @@ import InterceptingFilter.LoggerFilter;
 import Interpreter.ExchangePrice;
 import Interpreter.OriginalPrice;
 import Interpreter.Price;
-import Iterator.PlayerContainer;
-import Iterator.GameContainer;
-import MVC.PlayerController;
-import MVC.PlayerViews;
+import MVC.StudentController;
+import MVC.StudentView;
 import Mediator.ConcretePlayer;
 import Mediator.ConcreteMediator;
 import Mediator.ConcreteOthers;
@@ -44,19 +42,17 @@ import NullObject.AbstractCustomer;
 import NullObject.CustomerFactory;
 import Observer.ScoreSubject;
 import Flyweight.AttributeFactory;
-import Prototype.EDGFans;
+import Prototype.MathMember;
 import Proxy.ProxyScoreSheet;
 import Proxy.ScoreSheet;
 import Servant.Preparation;
-import SimpleFactory.Player;
-import SimpleFactory.PlayerFactory;
 import TransferObject.PlayerBO;
 import Visitor.CVisitorFn;
 
 import java.util.ArrayList;
 
-import static Flyweight.FansFlyweight.getRandomAge;
-import static Flyweight.FansFlyweight.getRandomSex;
+import static Flyweight.MemberFlyweight.getRandomAge;
+import static Flyweight.MemberFlyweight.getRandomSex;
 
 public class MainTest {
     //单例模式
@@ -446,10 +442,10 @@ public class MainTest {
         System.out.println("实现接口：AttributeFactory.setEDGAudience()");
         System.out.println("测试信息：");
         System.out.println("观众创建成功！");
-        EDGFans EDGFan = (EDGFans) AttributeFactory.setEDGFans("China");
+        MathMember EDGFan = (MathMember) AttributeFactory.setEDGFans("China");
         EDGFan.setAge(getRandomAge());
         EDGFan.setSex(getRandomSex());
-        EDGFan.printClub();
+        EDGFan.printSubject();
         System.out.println();
     }
 
@@ -460,15 +456,15 @@ public class MainTest {
         System.out.println("类：AudienceCache");
         System.out.println("实现接口：AudienceCache.getAudience(String audienceId)");
         System.out.println("测试信息：");
-        EDGFans EDGFans1 = (EDGFans) AttributeFactory.setEDGFans("China");
+        MathMember EDGFans1 = (MathMember) AttributeFactory.setEDGFans("China");
         EDGFans1.setAge(getRandomAge());
         EDGFans1.setSex(getRandomSex());
-        EDGFans1.printClub();
+        EDGFans1.printSubject();
         System.out.println("Clone Successfully!");
-        EDGFans EDGFans2 = (EDGFans) AttributeFactory.setEDGFans("China");
+        MathMember EDGFans2 = (MathMember) AttributeFactory.setEDGFans("China");
         EDGFans2.setAge(getRandomAge());
         EDGFans2.setSex(getRandomSex());
-        EDGFans2.printClub();
+        EDGFans2.printSubject();
         System.out.println();
     }
 
@@ -515,11 +511,11 @@ public class MainTest {
         System.out.println("实现接口：PlayerController.updateView()");
         System.out.println("测试信息：");
         Player player = new PlayerFactory().createPlayer("EDG", "China");
-        PlayerViews views = new PlayerViews();
-        PlayerController controller = new PlayerController(player, views);
+        StudentView views = new StudentView();
+        StudentController controller = new StudentController(player, views);
         controller.updateView();
         System.out.println("修改姓名为：JieJie");
-        controller.setPlayerName("JieJie");
+        controller.setStudentName("JieJie");
         controller.updateView();
         System.out.println();
     }

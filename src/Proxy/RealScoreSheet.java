@@ -1,7 +1,6 @@
 package Proxy;
 
 import Builder.Game;
-import Iterator.GameContainer;
 
 public class RealScoreSheet implements ScoreSheet {
     @Override

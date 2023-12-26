@@ -2,7 +2,7 @@ package SimpleFactory_new;
 
 public class StudentIngredientFactory {
 
-    //设置教育水平（未毕业的本科生，已毕业的本科生（二战））
+    //设置教育水平（本科生，硕士生，博士生）
     public EducationalLevel setEducationalLevel(String educationalLevelType) {
         if (educationalLevelType == null) {
             return null;
@@ -11,23 +11,21 @@ public class StudentIngredientFactory {
             return new Undergraduate();
         } else if (educationalLevelType.equalsIgnoreCase("Graduate")) {
             return new Graduate();
+        } else if (educationalLevelType.equalsIgnoreCase("PhD")) {
+            return new PhD();
         }
         return null;
     }
 
-    //设置学生的目标专业
-    public TargetMajor setTargetMajor(String targetMajorType) {
-        if (targetMajorType == null) {
+    //设置国籍（国内学生和国际学生）
+    public Nationality setNationality(String nationalityType) {
+        if (nationalityType == null) {
             return null;
         }
-        if (targetMajorType.equalsIgnoreCase("Software Engineering")) {
-            return new SoftwareEngineering();
-        } else if (targetMajorType.equalsIgnoreCase("Artificial Intelligence")) {
-            return new ArtificialIntelligence();
-        }else if(targetMajorType.equalsIgnoreCase("Computer Science")){
-            return new ComputerScience();
-        } else if(targetMajorType.equalsIgnoreCase("Other")) {
-            return new Other();
+        if (nationalityType.equalsIgnoreCase("Domestic")) {
+            return new Domestic();
+        } else if (nationalityType.equalsIgnoreCase("International")) {
+            return new International();
         }
         return null;
     }

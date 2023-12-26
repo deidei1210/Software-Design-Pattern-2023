@@ -3,11 +3,11 @@ package DAO_new;
 import java.util.List;
 
 public interface StudentDao {
-    List<Student> getAllStudents();
+    List<DAO.Student> getAllStudents();
 
-    Student getStudent(int rollNo);
+    DAO.Student getStudent(int rollNo);
 
-    void updateStudent(Student student);//更新玩家
+    void updateStudent(DAO.Student student);//更新玩家
 
     void deleteStudent(Student student);//删除玩家
 }

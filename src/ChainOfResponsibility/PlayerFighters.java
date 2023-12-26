@@ -1,7 +1,5 @@
 package ChainOfResponsibility;
 
-import Iterator.PlayerContainer;
-
 import java.util.ArrayList;
 import java.util.Random;
 

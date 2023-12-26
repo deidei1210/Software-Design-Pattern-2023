@@ -7,7 +7,6 @@ import TemplateAndStrategy_new.CollegePolitics;
 import TemplateAndStrategy_new.ComputerBasics;
 import Template_Strategy.*;
 
-//用来创建考试
 public class ExamsBuilder {
 
     //单例模式

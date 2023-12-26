@@ -1,58 +1,50 @@
 package Prototype;
 
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class PrototypeFunction {
     public static void PrototypeFn() throws CloneNotSupportedException {
-        FansCache.loadCache();
+        MemberCache.loadCache();
 
-        System.out.println("请选择要接见的观众的种类：[1]EDG [2]IG [3]RNG" + '\n' + "输入:[view]查看观众数量 [q]离开" );
+        System.out.println("请选择要查看的学习小组的学科：\"Math\" \"English\" \"Politics\"" );
+        System.out.println("输入:[view]查看学习小组人数 [quit]离开" );
         int counter = 0;
-        int edgCounter = 0;
-        int igCounter = 0;
-        int rngCounter = 0;
+        Map<String,Integer> subjectCounter = new java.util.HashMap<>(Map.of(
+                "Math", 0,
+                "English", 0,
+                "Politics", 0
+        ));
         String str = "";
         boolean flag = true;
         while (flag) {
-            Scanner sc = new Scanner(System.in);
-            str = sc.nextLine();
-            Fans clonedFans = FansCache.getFans("1");
-
-            switch (str) {
-                case "1": {
-                    edgCounter++;
-                    counter++;
-                    System.out.println("Here is a EDGFans");
+            Scanner scanner = new Scanner(System.in);
+            str = scanner.nextLine();
+            Member clonedMember = MemberCache.getMember("1");
+            if(subjectCounter.containsKey(str)) {
+                subjectCounter.put(str,subjectCounter.get(str)+1);
+                counter++;
+                System.out.println("Here is a "+str+"Member");
+            }
+            else {
+                switch (str) {
+                    case "view": {
+                        System.out.println("The number of Members:" + counter);
+                        for(String subject:subjectCounter.keySet()) {
+                            System.out.println("The number of "+subject+"Member:"+subjectCounter.get(subject));
+                        }
+                        break;
+                    }
+                    case "quit": {
+                        flag = false;
+                        break;
+                    }
+                    default: {
+                        System.out.println("Invalid input,please try again!");
+                        break;
+                    }
                 }
-                break;
-                case "2": {
-                    igCounter++;
-                    counter++;
-                    System.out.println("Here is a IGFans");
-                }
-                break;
-                case "3": {
-                    rngCounter++;
-                    counter++;
-                    System.out.println("Here is a RNGFans");
-                }
-                break;
-                case "view": {
-                    System.out.println("The number of Fans:" + counter);
-                    System.out.println("The number of edgFans:" + edgCounter);
-                    System.out.println("The number of igFans:" + igCounter);
-                    System.out.println("The number of rngFans:" + rngCounter);
-                }
-                break;
-                case "q": {
-                    flag = false;
-                }
-                break;
-                default: {
-                    System.out.println("Invalid input,please try again!");
-                }
-                break;
             }
         }
     }

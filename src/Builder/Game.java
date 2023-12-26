@@ -2,9 +2,6 @@ package Builder;
 
 import AbstractFactory.Judge;
 import AbstractFactory.JudgeStore;
-import Iterator.PlayerContainer;
-import Iterator.JudgeContainer;
-import SimpleFactory.Player;
 
 import java.util.ArrayList;
 import java.util.List;

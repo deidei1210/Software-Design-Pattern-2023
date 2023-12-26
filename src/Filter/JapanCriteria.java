@@ -1,7 +1,5 @@
 package Filter;
 
-import SimpleFactory.Player;
-
 import java.util.ArrayList;
 
 public class JapanCriteria implements Criteria {
