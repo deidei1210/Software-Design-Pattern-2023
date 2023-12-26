@@ -17,7 +17,7 @@ public class Book {
     }
 
     //获取备份
-    public String getFromMemento(@org.jetbrains.annotations.NotNull Memento memento) {
-        return memento.getStudyMaterials();
-    }
+//    public String getFromMemento(@org.jetbrains.annotations.NotNull Memento memento) {
+//        return memento.getStudyMaterials();
+//    }
 }

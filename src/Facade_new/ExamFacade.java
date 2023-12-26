@@ -18,7 +18,7 @@ public class ExamFacade {
     }
 
     // 提供给外部访问的方法，完成整个考试流程
-    public void completeExamProcess() {
+    public void method() {
         signUp.doSomething();
         lineUp.doSomething();
         infoCheck.doSomething();
