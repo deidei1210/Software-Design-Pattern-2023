@@ -83,7 +83,7 @@ public class Student {
 
     //设置学生的姓名
     public void setStudentName(String studentName) {
-        studentName = studentName;
+        this.studentName = studentName;
     }
 
     //获取学生的国籍
@@ -92,7 +92,7 @@ public class Student {
     }
 
     //设置学生的国籍
-    public void setStudentNationality(TargetMajor animalTargetMajor) {
+    public void setStudentTargetMajor(TargetMajor animalTargetMajor) {
         this.studentTargetMajor = animalTargetMajor;
     }
 

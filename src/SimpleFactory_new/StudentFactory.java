@@ -6,13 +6,13 @@ import java.util.Random;
 
 public class StudentFactory {
     //创建并初始化学生
-    public Student createStudent(String educationalLevel, String nationality) {
+    public static Student createStudent(String targetMajor,String educationalLevel) {
         Random r = new Random();
         StudentIngredientFactory studentIngredientFactory = new StudentIngredientFactory();
         //创建一个Student类
         Student student = new Student();
         student.setStudentEducationalLevel(studentIngredientFactory.setEducationalLevel(educationalLevel));
-        student.setStudentNationality(studentIngredientFactory.setTargetMajor(nationality));
+        student.setStudentTargetMajor(studentIngredientFactory.setTargetMajor(targetMajor));
 
         //随机生成学生的名字
         String studentName;
