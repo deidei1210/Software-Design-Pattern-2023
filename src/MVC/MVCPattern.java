@@ -1,14 +1,18 @@
 package MVC;
 
+
+import SimpleFactory_new.Student;
+import SimpleFactory_new.StudentFactory;
+
 import java.util.Scanner;
 
 public class MVCPattern {
     public static void main(String[] args) {
-        Player model = getPlayer();
+        Student model = getStudent();
 
-        PlayerViews views = new PlayerViews();
+        StudentView views = new StudentView();
 
-        PlayerController controller = new PlayerController(model,views);
+        StudentController controller = new StudentController(model,views);
 
         controller.updateView();
 
@@ -16,12 +20,12 @@ public class MVCPattern {
         System.out.println("请输入一个新名字:");
         Scanner sc = new Scanner(System.in);
         str = sc.nextLine();
-        controller.setPlayerName(str);
+        controller.setStudentName(str);
 
         controller.updateView();
     }
 
-    private static Player getPlayer(){
-        return new PlayerFactory().createPlayer("IG", "Japan");
+    private static Student getStudent(){
+        return new StudentFactory().createStudent("Granduates", "Japan");
     }
 }
