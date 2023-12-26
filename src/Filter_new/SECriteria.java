@@ -1,0 +1,18 @@
+package Filter_new;
+
+import SimpleFactory_new.Student;
+import java.util.ArrayList;
+
+public class SECriteria implements Criteria {
+    //该标准判断对象的俱乐部是不是软件工程
+    @Override
+    public ArrayList<Student> meetCriteria(ArrayList<Student> playerList) {
+        ArrayList<Student> SEstudent = new ArrayList<>();
+        for (Student player : playerList) {
+            if (player.getStudentMajor() == "软件工程") {
+                SEstudent.add(player);
+            }
+        }
+        return SEstudent;
+    }
+}
