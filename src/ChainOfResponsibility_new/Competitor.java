@@ -1,22 +1,22 @@
 package ChainOfResponsibility_new;
 
 import ChainOfResponsibility_new.AbstractOpponent;
-import SimpleFactory.Player;
+import SimpleFactory.Student;
 
 public class Competitor extends AbstractOpponent {
 
-    private Player player;
+    private Student student;
     private ChainOfResponsibility_new.Competitor competitor;
 
     public Competitor() {
     }
 
-    public Player getPlayer() {
-        return player;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
 }
