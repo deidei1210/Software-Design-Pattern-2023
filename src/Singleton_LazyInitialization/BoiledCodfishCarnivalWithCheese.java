@@ -3,6 +3,8 @@ package Singleton_LazyInitialization;
 import Bridge.*;
 import Builder.Game;
 import Builder.GamesBuilder;
+import Builder_new.Exam;
+import Builder_new.ExamsBuilder;
 import Command.CCommandFn;
 import Composite.Menu;
 import Composite.MenuOption;
@@ -11,12 +13,16 @@ import FactoryMethod.EarphoneFactory;
 import FactoryMethod.KeyboardFactory;
 import FactoryMethod.MousePeripheralFactory;
 import FactoryMethod.Peripheral;
+import Iterator.GameContainer;
+import Iterator.PlayerContainer;
 import Mediator.CMediatorFn;
 import Prototype.PrototypeFunction;
 import Proxy.ProxyScoreSheet;
 import Proxy.ScoreSheet;
 import Servant.Preparation;
 import Servant.Worker;
+import SimpleFactory.Player;
+import SimpleFactory.PlayerFactory;
 import State.StateGood;
 import State.StatePerfect;
 import Template_Strategy.*;
@@ -26,10 +32,8 @@ import SimpleFactory_new.Student;
 import SimpleFactory_new.StudentFactory;
 import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
-import Builder_new.Exam;
-import Builder_new.ExamsBuilder;
-
-import Facade_new.ExamFacade;
+import Builder.Game;
+import Builder.GamesBuilder;
 
 import java.util.Scanner;
 
@@ -37,7 +41,7 @@ public class BoiledCodfishCarnivalWithCheese {
 
     //创建 Singleton.AnimalSportMeeting 的一个对象
 
-    private Player player;
+    private Student student;
 
     //让构造函数为 private，这样该类就不会被实例化
     private BoiledCodfishCarnivalWithCheese() {
@@ -54,63 +58,73 @@ public class BoiledCodfishCarnivalWithCheese {
 
     //流程控制器
     public void flowController() throws CloneNotSupportedException {
-        System.out.println("欢迎来到芝士煲鳕嘉年华！");
+        System.out.println("欢迎来到顶峰考研云在线考研模拟考试系统！");
         Scanner input = new Scanner(System.in);
-        //创建玩家
+        //学生注册
         System.out.println("请输入你的名字：");
         String name = input.nextLine();
-        System.out.println("选择你的俱乐部 [1]EDG [2]IG [3]RNG");
-        int clubNum = input.nextInt();
-        System.out.println("选择你的国籍 [1]China [2]America [3]Japan");
-        int nationNum = input.nextInt();
-        String club = "EDG";
-        String nation = "China";
-        switch (clubNum) {
+
+        //选择你的考研目标专业
+        System.out.println("选择你的目标专业 [1]Software Engineering [2]Computer Science [3]Artificial Intelligence [4]Other");
+        int majorNum = input.nextInt();
+        System.out.println("选择你的教育程度 [1]未毕业 [2]已毕业");
+        int educationNum = input.nextInt();
+
+        //选择的目标专业
+        String major = "Software Engineering";
+        String educationLevel = "Undergraduate";
+
+        //根据用户的选择进行major的赋值
+        switch (majorNum) {
             case 1:
-                club = "EDG";
+                major = "Software Engineering";
                 break;
             case 2:
-                club = "IG";
+                major = "Computer Science";
                 break;
             case 3:
-                club = "RNG";
+                major = "Artificial Intelligence";
+                break;
+            case 4:
+                major = "Other";
                 break;
             default:
                 break;
         }
-        switch (nationNum) {
+        //选择用户的教育程度：是否已经毕业？如果已经毕业则可能是二战，如果不是则是一战
+        switch (educationNum) {
             case 1:
-                nation = "China";
+                educationLevel = "Undergraduate";
                 break;
             case 2:
-                nation = "America";
-                break;
-            case 3:
-                nation = "Japan";
+                educationLevel = "Graduate";
                 break;
             default:
                 break;
         }
-        PlayerFactory playerFactory = new PlayerFactory();
-        player = playerFactory.createPlayer(club, nation);
-        player.setPlayerName(name);
-        PlayerContainer.getInstance().add(player);
-        //创建NPC玩家
-        PlayerContainer.getInstance().add(playerFactory.createPlayer("EDG", "China"));
-        PlayerContainer.getInstance().add(playerFactory.createPlayer("EDG", "Japan"));
-        PlayerContainer.getInstance().add(playerFactory.createPlayer("EDG", "America"));
-        PlayerContainer.getInstance().add(playerFactory.createPlayer("IG", "China"));
-        PlayerContainer.getInstance().add(playerFactory.createPlayer("IG", "Japan"));
-        PlayerContainer.getInstance().add(playerFactory.createPlayer("RNG", "China"));
-        PlayerContainer.getInstance().add(playerFactory.createPlayer("RNG", "America"));
-        //创建比赛项目
-        GamesBuilder.getInstance().buildGames();
-        for (Game game : GameContainer.getInstance().getGames()) {
-            game.showGameInfo();
+
+
+//        StudentFactory studentFactory = new StudentFactory();
+        student = StudentFactory.createStudent(major, educationLevel);
+        student.setStudentName(name);//设置学生姓名
+        StudentContainer.getInstance().add(student);
+        //创建一起参加模拟考试的考生
+        StudentContainer.getInstance().add(StudentFactory.createStudent("Software Engineering", "Undergraduate"));
+        StudentContainer.getInstance().add(StudentFactory.createStudent("Artificial Intelligence", "Undergraduate"));
+        StudentContainer.getInstance().add(StudentFactory.createStudent("Computer Science", "Graduate"));
+        StudentContainer.getInstance().add(StudentFactory.createStudent("Other", "Undergraduate"));
+        StudentContainer.getInstance().add(StudentFactory.createStudent("Software Engineering", "Graduate"));
+        StudentContainer.getInstance().add(StudentFactory.createStudent("Computer Science", "Undergraduate"));
+        StudentContainer.getInstance().add(StudentFactory.createStudent("Artificial Intelligence", "Undergraduate"));
+
+        //创建考试项目
+        ExamsBuilder.getInstance().buildExams();
+        for (Exam exam : ExamContainer.getInstance().getExams()) {
+            exam.showExamInfo();
         }
-        //学生检入
-        ExamFacade facade = new ExamFacade();
-        facade.method();
+//        //玩家检入
+//        Facade facade = new Facade();
+//        facade.method();
 //        //比赛正式开始
 //        //设置测试用菜单
 //        Menu rootMenu = new Menu("大厅选择");
