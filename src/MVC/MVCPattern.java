@@ -1,5 +1,8 @@
 package MVC;
 
+import SimpleFactory.Player;
+import SimpleFactory.PlayerFactory;
+
 import java.util.Scanner;
 
 public class MVCPattern {

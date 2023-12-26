@@ -3,6 +3,7 @@ package Template_Strategy;
 import Builder.Game;
 import Observer.ScoreSubject;
 import Servant.Preparation;
+import SimpleFactory.Player;
 import State.StateGood;
 import State.StatePerfect;
 import State.StateTired;

@@ -1,6 +1,7 @@
 package Builder;
 
 import Template_Strategy.Contest;
+import Iterator.GameContainer;
 import Template_Strategy.ForwardWatch;
 import Template_Strategy.HeroOfFan;
 import Template_Strategy.LoreOfLU;

@@ -1,5 +1,7 @@
 package Filter;
 
+import SimpleFactory.Player;
+
 import java.util.ArrayList;
 
 public class AndCriteria {

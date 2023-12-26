@@ -1,6 +1,7 @@
 package Bridge;
 
 import FactoryMethod.Peripheral;
+import SimpleFactory.Player;
 
 public class KeyboardWearing extends PlayerPeripheral{
     public KeyboardWearing(PeripheralWearer peripheralWearer) {

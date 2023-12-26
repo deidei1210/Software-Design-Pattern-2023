@@ -1,6 +1,7 @@
 package Bridge;
 
 import FactoryMethod.Peripheral;
+import SimpleFactory.Player;
 
 public class MouseWearing extends PlayerPeripheral{
     public MouseWearing(PeripheralWearer peripheralWearer) {

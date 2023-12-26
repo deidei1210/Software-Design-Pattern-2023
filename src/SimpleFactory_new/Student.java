@@ -16,6 +16,8 @@ public class Student {
     private int[] Rank;
     private double[] Score;
 
+    private String major;
+
     public Student() {
     }
 
@@ -30,25 +32,6 @@ public class Student {
         luck = 96;
         endurance = 104;
         intelligence = 100;
-//        if (educationalLevel.getEducationalLevel() == "IG") {
-//            reaction = 106;
-//            handspeed = 98;
-//            luck = 96;
-//            endurance = 104;
-//            intelligence = 100;
-//        } else if (educationalLevel.getEducationalLevel() == "EDG") {
-//            reaction = 103;
-//            handspeed = 99;
-//            luck = 100;
-//            endurance = 101;
-//            intelligence = 95;
-//        } else if (educationalLevel.getEducationalLevel() == "RNG") {
-//            reaction = 98;
-//            handspeed = 104;
-//            luck = 99;
-//            endurance = 108;
-//            intelligence = 102;
-//        }
     }
 
     //getter & stter
@@ -93,52 +76,73 @@ public class Student {
     }
 
 
+    //获取学生的姓名
     public String getStudentName() {
         return studentName;
     }
 
+    //设置学生的姓名
     public void setStudentName(String studentName) {
         studentName = studentName;
     }
 
+    //获取学生的国籍
     public Nationality getStudentNationality() {
         return studentNationality;
     }
 
+    //设置学生的国籍
     public void setStudentNationality(Nationality animalNationality) {
         this.studentNationality = animalNationality;
     }
 
+    //获取学生的教育程度
     public EducationalLevel getStudentEducationalLevel() {
         return studentEducationalLevel;
     }
 
+    //设置学生的教育程度
     public void setStudentEducationalLevel(EducationalLevel studentEducationalLevel) {
         this.studentEducationalLevel = studentEducationalLevel;
     }
 
+    //获取学生的排名
     public int[] getRank() {
         return Rank;
     }
 
+    //设置学生的排名
     public void setRank(int[] rank) {
         Rank = rank;
     }
 
+    //获取学生的成绩
     public double[] getScore() {
         return Score;
     }
 
+    //设置学生的成绩
     public void setScore(double[] score) {
         Score = score;
     }
 
+    //获取学生此时的状态
     public StudentState getStudentState() {
         return studentState;
     }
 
+    //获取学生的状态
     public void setStudentState(StudentState studentState) {
         this.studentState = studentState;
+    }
+
+    //设置学生的专业
+    public void setStudentMjor(String major){
+        this.major=major;
+    }
+    //获取学生的专业
+    public String getStudentMajor(){
+        return this.major;
     }
 
     //输出测试信息

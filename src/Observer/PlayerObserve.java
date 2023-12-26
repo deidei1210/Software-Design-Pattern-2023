@@ -1,5 +1,7 @@
 package Observer;
 
+import Iterator.PlayerContainer;
+
 public class PlayerObserve implements Observer {
 
     int PlayerNum;

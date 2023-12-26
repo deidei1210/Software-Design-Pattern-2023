@@ -1,5 +1,6 @@
 package Bridge;
 
+import SimpleFactory.Player;
 import FactoryMethod.Peripheral;
 
 public abstract class PlayerPeripheral {
