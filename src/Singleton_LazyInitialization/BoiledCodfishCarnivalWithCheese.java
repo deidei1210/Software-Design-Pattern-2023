@@ -20,14 +20,13 @@ import TemplateAndStrategy_new.AdvancedMath;
 import TemplateAndStrategy_new.CollegeEnglish;
 import TemplateAndStrategy_new.CollegePolitics;
 import TemplateAndStrategy_new.ComputerBasics;
+import Visitor_new.CVisitorFn;
 
 import java.util.Scanner;
 
 public class BoiledCodfishCarnivalWithCheese {
 
     //创建 Singleton.AnimalSportMeeting 的一个对象
-
-    private Student student;
 
     //让构造函数为 private，这样该类就不会被实例化
     private BoiledCodfishCarnivalWithCheese() {
@@ -91,7 +90,7 @@ public class BoiledCodfishCarnivalWithCheese {
 
 
 //        StudentFactory studentFactory = new StudentFactory();
-        student = StudentFactory.createStudent(major, educationLevel);
+        Student student = StudentFactory.createStudent(major, educationLevel);
         student.setStudentName(name);//设置学生姓名
         StudentContainer.getInstance().add(student);
         //创建一起参加模拟考试的考生
@@ -242,21 +241,18 @@ public class BoiledCodfishCarnivalWithCheese {
                         }
                         CMediatorFn.getInstance().MediateFn();
                     }
-//                    重新进行选择
-                    rootMenu.printMenu();
-                    i = input.nextInt();
                     break;
                 case 3:
-//                    System.out.println("输入要询问的玩家编号：");
-//                    int n = input.nextInt() - 1;
-//                    System.out.println("选择要询问的比赛 [1]守望前锋：再也不来 [2]风扇英雄 [3]魔怪争霸2 [4]星河争霸3 [5]卢氏传说");
-//                    int m = input.nextInt();
-//                    Game game = GameContainer.getInstance().get(m - 1);
-//                    if (!game.isVisited()) {
-//                        System.out.println("该比赛尚未开始！");
-//                        break;
-//                    }
-//                    CVisitorFn.VisitorFn(n, game);
+                    System.out.println("输入要询问的玩家编号：");
+                    int n = input.nextInt() - 1;
+                    System.out.println("选择要询问的考试 [1]高等数学 [2]大学英语 [3]大学政治 [4]计算机408");
+                    int m = input.nextInt();
+                    Exam exam = ExamContainer.getInstance().get(m - 1);
+                    if (!exam.isTaken()) {
+                        System.out.println("该考试尚未开始！");
+                        break;
+                    }
+                    CVisitorFn.VisitorFn(n, exam);
                     break;
                 case 4:
 //                    System.out.println("欢迎光临运SCBoy外设专卖店！");
@@ -302,8 +298,8 @@ public class BoiledCodfishCarnivalWithCheese {
                 break;
             }
 
-//            rootMenu.printMenu();
-//            i = input.nextInt();
+            rootMenu.printMenu();
+            i = input.nextInt();
         }
         System.out.println("考研顶峰云系统已关闭！欢迎您的再一次使用！");
     }

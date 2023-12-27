@@ -27,13 +27,13 @@ public class CVisitorFn {
         hall.addElement(new RankingList(game.getName(), PlayerContainer.getInstance().get(player).getPlayerName(),
             PlayerContainer.getInstance().get(player).getRank()[no]));
 
-        RankingViewer audience = new Audience();
+        Audience audience = new Audience();
         //观众访问大厅
         hall.show(audience);
 
-        ((Audience) audience).getCertainItem();
-        ((Audience) audience).getCertainName();
-        ((Audience) audience).getCertainRanking();
+        audience.getCertainItem();
+        audience.getCertainName();
+        audience.getCertainRanking();
 
 
     }
