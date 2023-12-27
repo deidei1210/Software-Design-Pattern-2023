@@ -9,6 +9,8 @@ import Composite_new.MenuOption;
 import Facade_new.ExamFacade;
 import FactoryMethod_new.*;
 import Mediator_new.CMediatorFn;
+import Proxy_new.ProxyScoreSheet;
+import Proxy_new.ScoreSheet;
 import Servant_new.Preparation;
 import Servant_new.Worker;
 import SimpleFactory_new.Student;
@@ -286,8 +288,8 @@ public class BoiledCodfishCarnivalWithCheese {
                     }
                     break;
                 case 5:
-//                    ScoreSheet proxyScoreSheet = new ProxyScoreSheet();
-//                    proxyScoreSheet.printScoreSheet();
+                    ScoreSheet proxyScoreSheet = new ProxyScoreSheet();
+                    proxyScoreSheet.printScoreSheet();
                     break;
                 case 6:
 //                    try {
