@@ -1,11 +1,13 @@
 package Singleton_LazyInitialization;
 
+import Bridge_new.*;
 import Builder_new.Exam;
 import Builder_new.ExamsBuilder;
 
 import Command_new.CCommandFn;
 import Composite_new.MenuOption;
 import Facade_new.ExamFacade;
+import FactoryMethod_new.*;
 import Mediator_new.CMediatorFn;
 import Servant_new.Preparation;
 import Servant_new.Worker;
@@ -255,28 +257,33 @@ public class BoiledCodfishCarnivalWithCheese {
                     CVisitorFn.VisitorFn(n, exam);
                     break;
                 case 4:
-//                    System.out.println("欢迎光临运SCBoy外设专卖店！");
-//                    System.out.println("选购心仪的装备 [1]大而优鼠标 [2]镭射键盘 [3]洛基耳机");
-//                    int k = input.nextInt();
-//                    if (k == 1) {
-//                        MousePeripheralFactory mouseFactory = new MousePeripheralFactory();
-//                        Peripheral mouse = mouseFactory.createPeripheral(player);
-//                        PeripheralWearer ei = new PerfectPeripheral();
-//                        PlayerPeripheral peripheral = new MouseWearing(ei);
-//                        peripheral.PeripheralWear(player, mouse);
-//                    } else if (k == 2) {
-//                        KeyboardFactory keyboardFactory = new KeyboardFactory();
-//                        Peripheral keyBoard = keyboardFactory.createPeripheral(player);
-//                        PeripheralWearer ei = new PerfectPeripheral();
-//                        PlayerPeripheral peripheral = new KeyboardWearing(ei);
-//                        peripheral.PeripheralWear(player, keyBoard);
-//                    } else if (k == 3) {
-//                        EarphoneFactory earphoneFactory = new EarphoneFactory();
-//                        Peripheral earphone = earphoneFactory.createPeripheral(player);
-//                        PeripheralWearer ei = new PerfectPeripheral();
-//                        PlayerPeripheral peripheral = new KeyboardWearing(ei);
-//                        peripheral.PeripheralWear(player, earphone);
-//                    }
+                    System.out.println("欢迎光临你这个年纪怎么睡得着觉学习装备顶峰考研云指定合作伙伴专卖店！");
+                    System.out.println("选购舒适的学习装备 [1]大屏清晰的学习电脑 [2]学习专用舒适椅 [3]温和明亮学习灯");
+                    int k = input.nextInt();
+                    //购买笔记本电脑
+                    if (k == 1) {
+                        TabletComputerFactory tabletComputerFactory = new TabletComputerFactory();
+                        Supplies tabletComputer = tabletComputerFactory.createSupply(student);
+                        SupplyBuyer si = new PerfectSupply();
+                        StudentSupply supply = new TabletComputerBuying(si);
+                        supply.supplyBuy(student, tabletComputer);
+                    }
+                    //购买椅子
+                    else if (k == 2) {
+                        StudyChairFactory studyChairFactory = new StudyChairFactory();
+                        Supplies studyChair = studyChairFactory.createSupply(student);
+                        SupplyBuyer si = new PerfectSupply();
+                        StudentSupply supply = new StudyChairBuying(si);
+                        supply.supplyBuy(student, studyChair);
+                    }
+                    //学习灯
+                    else if (k == 3) {
+                        ReadingLampFactory readingLampFactory = new ReadingLampFactory();
+                        Supplies studyLamp = readingLampFactory.createSupply(student);
+                        SupplyBuyer si = new PerfectSupply();
+                        StudentSupply supply = new StudyChairBuying(si);
+                        supply.supplyBuy(student, studyLamp);
+                    }
                     break;
                 case 5:
 //                    ScoreSheet proxyScoreSheet = new ProxyScoreSheet();

@@ -3,8 +3,8 @@ package Bridge_new;
 import FactoryMethod_new.Supplies;
 import SimpleFactory_new.Student;
 
-public class readingLampBuying extends studentSupply {
-    public readingLampBuying(Bridge_new.supplyBuyer supplyBuyer) {
+public class ReadingLampBuying extends StudentSupply {
+    public ReadingLampBuying(SupplyBuyer supplyBuyer) {
         super(supplyBuyer);
     }
 

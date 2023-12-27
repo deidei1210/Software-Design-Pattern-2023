@@ -3,10 +3,10 @@ package Bridge_new;
 import FactoryMethod_new.Supplies;
 import SimpleFactory_new.Student;
 
-public abstract class studentSupply {
-    private Bridge_new.supplyBuyer supplyBuyer;
+public abstract class StudentSupply {
+    private SupplyBuyer supplyBuyer;
 
-    public studentSupply(Bridge_new.supplyBuyer supplyBuyer) {
+    public StudentSupply(SupplyBuyer supplyBuyer) {
         this.supplyBuyer = supplyBuyer;
     }
 

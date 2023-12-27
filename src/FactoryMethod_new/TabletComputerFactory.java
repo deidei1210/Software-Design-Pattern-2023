@@ -2,9 +2,9 @@ package FactoryMethod_new;
 
 import SimpleFactory_new.Student;
 
-public class tabletComputerFactory implements ISupplyFactory {
+public class TabletComputerFactory implements ISupplyFactory {
     @Override
     public Supplies createSupply(Student owner) {
-        return new tabletComputer(owner);
+        return new TabletComputer(owner);
     }
 }

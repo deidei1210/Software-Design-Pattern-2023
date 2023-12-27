@@ -2,13 +2,13 @@ package FactoryMethod_new;
 
 import SimpleFactory_new.Student;
 
-public class tabletComputer extends Supplies {
-    public tabletComputer(Student owner) {
+public class TabletComputer extends Supplies {
+    public TabletComputer(Student owner) {
         super(owner);
     }
 
     @Override
     public String getSupplyName() {
-        return "鼠标";
+        return "性能++的电脑";
     }
 }

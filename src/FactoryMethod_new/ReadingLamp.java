@@ -2,13 +2,13 @@ package FactoryMethod_new;
 
 import SimpleFactory_new.Student;
 
-public class studyChair extends Supplies {
-    public studyChair(Student owner) {
+public class ReadingLamp extends Supplies {
+    public ReadingLamp(Student owner) {
         super(owner);
     }
 
     @Override
     public String getSupplyName() {
-        return "学习椅";
+        return "阅读灯";
     }
 }
