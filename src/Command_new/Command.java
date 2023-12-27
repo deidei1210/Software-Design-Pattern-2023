@@ -7,5 +7,7 @@ public interface Command {
     void execute() throws InterruptedException;
 
     Book getMyBook();
+
+    int getPrice();
 }
 

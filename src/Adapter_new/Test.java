@@ -10,15 +10,15 @@ public class Test {
         type = scan.nextInt();
         switch (type) {
             case 1: {
-                new AliAdapter().pay();
+                new AliAdapter().pay(19);
                 break;
             }
             case 2: {
-                new WechatPay().pay();
+                new WechatPay().pay(19);
                 break;
             }
             case 3:{
-                new CardPay().pay();
+                new CardPay().pay(19);
                 break;
             }
         }

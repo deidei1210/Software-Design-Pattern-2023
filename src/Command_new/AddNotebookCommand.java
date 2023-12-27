@@ -1,4 +1,5 @@
 package Command_new;
+import Decorator_new.Card;
 import Decorator_new.StudyMaterialDecorator;
 import Decorator_new.Book;
 import Decorator_new.Notebook;
@@ -17,5 +18,10 @@ public class AddNotebookCommand implements Command {
 
     public Book getMyBook() {
         return myBook;
+    }
+
+    @Override
+    public int getPrice(){
+        return  23;
     }
 }

@@ -4,7 +4,7 @@ import Decorator_new.MathBook;
 import Decorator_new.Book;
 
 public class OrderMathBookCommand implements Command {
-    //点单填腹一饼的命令
+    //点单数学资料的命令
     private final MathBook myMathBook = new MathBook();
 
     @Override
@@ -15,5 +15,10 @@ public class OrderMathBookCommand implements Command {
     @Override
     public Book getMyBook() {
         return myMathBook;
+    }
+
+    @Override
+    public int getPrice(){
+        return  new MathBook().getPrice();
     }
 }

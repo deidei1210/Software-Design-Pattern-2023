@@ -16,4 +16,10 @@ public class OrderPoliticBookCommand implements Command {
     public Book getMyBook() {
         return myPoliticBook;
     }
+
+    @Override
+    public int getPrice() {
+        return new PoliticBook().getPrice();
+    }
+
 }
