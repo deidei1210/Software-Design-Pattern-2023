@@ -1,7 +1,7 @@
 package TemplateAndStrategy_new;
 
 import Builder_new.Exam;
-import Observer.ScoreSubject;
+import Observer_new.ScoreSubject;
 import Servant_new.Preparation;
 import SimpleFactory_new.Student;
 import State_new.StateGood;

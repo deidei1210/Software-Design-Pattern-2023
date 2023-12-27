@@ -6,11 +6,14 @@ import Builder_new.ExamsBuilder;
 import Command_new.CCommandFn;
 import Composite_new.MenuOption;
 import Facade_new.ExamFacade;
+import Servant_new.Preparation;
+import Servant_new.Worker;
 import SimpleFactory_new.Student;
 import SimpleFactory_new.StudentFactory;
 import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
 import Composite_new.Menu;
+import TemplateAndStrategy_new.AdvancedMath;
 
 import java.util.Scanner;
 
@@ -134,27 +137,27 @@ public class BoiledCodfishCarnivalWithCheese {
         rootMenu.add(meetAudience);
         // 菜单以及选择返回
         rootMenu.printMenu();
-//        int i = input.nextInt();
-//        int gameVisited = 0;
-//        while (i != 0) {
-//            switch (i) {
-//                case 1: {
-//                    gameMenu.printMenu();
-//                    Game game;
-//                    switch (input.nextInt()) {
-//                        case 1:
-//                            game = (ForwardWatch) (gameMenu.getMenu().get(0).option);
-//                            if (game.isVisited()) {
-//                                System.out.println("该项目已结束，请参加其他项目！");
-//                                break;
-//                            }
-//                            Worker worker1 = new Worker();
-//                            worker1.prepare((Preparation) game);
-//                            game.gameStart();
-//                            game.gameEnd();
-//                            ++gameVisited;
-//                            break;
-//                        case 2:
+        int i = input.nextInt();
+        int examVisited = 0;
+        while (i != 0) {
+            switch (i) {
+                case 1: {
+                    examMenu.printMenu();
+                    Exam exam;
+                    switch (input.nextInt()) {
+                        case 1:
+                            exam = (AdvancedMath) (examMenu.getMenu().get(0).option);
+                            if (exam.isVisited()) {
+                                System.out.println("该考试已结束，请参加其他科目的模拟测试！");
+                                break;
+                            }
+                            Worker worker1 = new Worker();
+                            worker1.prepare((Preparation) exam);
+                            exam.examStart();
+                            exam.examEnd();
+                            ++examVisited;
+                            break;
+                        case 2:
 //                            game = (HeroOfFan) (gameMenu.getMenu().get(1).option);
 //                            if (game.isVisited()) {
 //                                System.out.println("该项目已结束，请参加其他项目！");
@@ -165,8 +168,8 @@ public class BoiledCodfishCarnivalWithCheese {
 //                            game.gameStart();
 //                            game.gameEnd();
 //                            ++gameVisited;
-//                            break;
-//                        case 3:
+                            break;
+                        case 3:
 //                            game = (MagicWarCraft) (gameMenu.getMenu().get(2).option);
 //                            if (game.isVisited()) {
 //                                System.out.println("该项目已结束，请参加其他项目！");
@@ -177,8 +180,8 @@ public class BoiledCodfishCarnivalWithCheese {
 //                            game.gameStart();
 //                            game.gameEnd();
 //                            ++gameVisited;
-//                            break;
-//                        case 4:
+                            break;
+                        case 4:
 //                            game = (SeaCraft) (gameMenu.getMenu().get(3).option);
 //                            if (game.isVisited()) {
 //                                System.out.println("该项目已结束，请参加其他项目！");
@@ -189,8 +192,8 @@ public class BoiledCodfishCarnivalWithCheese {
 //                            game.gameStart();
 //                            game.gameEnd();
 //                            ++gameVisited;
-//                            break;
-//                        case 5:
+                            break;
+                        case 5:
 //                            game = (LoreOfLU) (gameMenu.getMenu().get(4).option);
 //                            if (game.isVisited()) {
 //                                System.out.println("该项目已结束，请参加其他项目！");
@@ -201,8 +204,8 @@ public class BoiledCodfishCarnivalWithCheese {
 //                            game.gameStart();
 //                            game.gameEnd();
 //                            ++gameVisited;
-//                            break;
-//                        case 6:
+                            break;
+                        case 6:
 //                            game = (Contest) (gameMenu.getMenu().get(5).option);
 //                            if (game.isVisited()) {
 //                                System.out.println("该项目已结束，请参加其他项目！");
@@ -211,20 +214,20 @@ public class BoiledCodfishCarnivalWithCheese {
 //                            game.gameStart();
 //                            game.gameEnd();
 //                            ++gameVisited;
-//                            break;
-//                        case 0:
+                            break;
+                        case 0:
 //                            forwardWatch.getLast().printMenu();
 //                            i = input.nextInt();
-//                            break;
-//                        default:
-//                            break;
-//                    }
-//                    if (gameVisited == 5) {
-//                        System.out.println("");
-//                    }
-//                    break;
-//                }
-//                case 2:
+                            break;
+                        default:
+                            break;
+                    }
+                    if (examVisited == 5) {
+                        System.out.println("");
+                    }
+                    break;
+                }
+                case 2:
 //                    CCommandFn CCommandFn = (CCommandFn) rootMenu.getMenu().get(1).option;
 //                    boolean isFood = false;
 //                    try {
@@ -248,8 +251,8 @@ public class BoiledCodfishCarnivalWithCheese {
 //                        }
 //                        CMediatorFn.getInstance().MediateFn();
 //                    }
-//                    break;
-//                case 3:
+                    break;
+                case 3:
 //                    System.out.println("输入要询问的玩家编号：");
 //                    int n = input.nextInt() - 1;
 //                    System.out.println("选择要询问的比赛 [1]守望前锋：再也不来 [2]风扇英雄 [3]魔怪争霸2 [4]星河争霸3 [5]卢氏传说");
@@ -260,8 +263,8 @@ public class BoiledCodfishCarnivalWithCheese {
 //                        break;
 //                    }
 //                    CVisitorFn.VisitorFn(n, game);
-//                    break;
-//                case 4:
+                    break;
+                case 4:
 //                    System.out.println("欢迎光临运SCBoy外设专卖店！");
 //                    System.out.println("选购心仪的装备 [1]大而优鼠标 [2]镭射键盘 [3]洛基耳机");
 //                    int k = input.nextInt();
@@ -284,30 +287,31 @@ public class BoiledCodfishCarnivalWithCheese {
 //                        PlayerPeripheral peripheral = new KeyboardWearing(ei);
 //                        peripheral.PeripheralWear(player, earphone);
 //                    }
-//                    break;
-//                case 5:
+                    break;
+                case 5:
 //                    ScoreSheet proxyScoreSheet = new ProxyScoreSheet();
 //                    proxyScoreSheet.printScoreSheet();
-//                    break;
-//                case 6:
+                    break;
+                case 6:
 //                    try {
 //                        PrototypeFunction.PrototypeFn();
 //                    } catch (CloneNotSupportedException e) {
 //                        e.printStackTrace();
 //                    }
-//                case 0:
-//                    break;
-//                default:
-//                    break;
-//            }
-//            /*if (gameVisited == 5) {
-//                System.out.println("所有比赛均已结束！");
-//                break;
-//            }*/
+                case 0:
+                    break;
+                default:
+                    break;
+            }
+            if (examVisited == 5) {
+                System.out.println("所有比赛均已结束！");
+                break;
+            }
+
 //            rootMenu.printMenu();
 //            i = input.nextInt();
-//        }
-//        System.out.println("芝士煲鳕嘉年华到此结束！");
+        }
+        System.out.println("芝士煲鳕嘉年华到此结束！");
     }
 
     private static class SingletonHolder {
