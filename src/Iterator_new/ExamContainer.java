@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class ExamContainer implements Container {
 
     //单例模式，使玩家管理器可以被全局访问
-    private static ExamContainer instance = new ExamContainer();
+    private static final ExamContainer instance = new ExamContainer();
     //建立exam容器
-    private ArrayList<Exam> exams;
+    private final ArrayList<Exam> exams;
 
     private ExamContainer() {
         exams = new ArrayList<>();

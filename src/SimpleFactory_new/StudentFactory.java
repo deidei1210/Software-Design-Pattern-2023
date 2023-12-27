@@ -22,10 +22,10 @@ public class StudentFactory {
         studentName = RandomNameGenerator.generateRandomChineseName();
         student.setStudentName(studentName);
 
-        //设置学生的排名
-        student.setRank(new int[]{0, 0, 0});
-        //设置学生的分数
-        student.setScore(new double[]{0, 0, 0});
+        //设置学生每一门课的排名
+        student.setRank(new int[]{0, 0, 0,0});
+        //设置学生每一门课的分数
+        student.setScore(new double[]{0, 0, 0,0});
         //设置学生的状态，初始状态为good
         student.setStudentState(new StateGood());
 

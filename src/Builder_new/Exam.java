@@ -11,22 +11,22 @@ import java.util.List;
 
 public abstract class Exam {
     //考试的名称
-    private String name;
+    private final String name;
 
     //参加考试的学生
-    private List<Student> StudentLists = new ArrayList<Student>();
+    private final List<Student> StudentLists = new ArrayList<Student>();
 
     //出题教师
     private Teacher teacher;
 
     //考试分数
-    private double[] score = new double[8];
+    private final double[] score = new double[8];
 
     //将学生根据序号排列
-    private int[] rankByNO = new int[8];
+    private final int[] rankByNO = new int[8];
 
     //将学生根据得分排列
-    private int[] rankByRank = new int[8];
+    private final int[] rankByRank = new int[8];
 
     //该考试是否已经进行过
     private boolean isTaken;
@@ -106,6 +106,10 @@ public abstract class Exam {
 
     public int[] getRankByNO() {
         return rankByNO;
+    }
+
+    public int getStudentRank(int index){
+        return rankByNO[index];
     }
 
     public int[] getRankByRank() {

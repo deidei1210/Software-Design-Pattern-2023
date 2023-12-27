@@ -26,7 +26,11 @@ public class Student {
 
     //学生的状态
     private StudentState studentState;
+
+    //存储学生每一门课的排名
     private int[] Rank;
+
+    //存储学生每一门课的分数
     private double[] Score;
 
     private String targetMajor;
