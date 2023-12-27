@@ -110,7 +110,7 @@ public class MainTest {
         System.out.println("类：BoiledCodfishMeeting");
         System.out.println("实现接口：BoiledCodfishMeeting.getInstance()");
         System.out.println("测试信息：");
-        BoiledCodfishCarnivalWithCheese.getInstance().showMessage();
+        PeakPostgraduateEntranceExamCloud.getInstance().showMessage();
         System.out.println();
     }
 
@@ -503,7 +503,7 @@ public class MainTest {
         System.out.println("实现接口：BoiledCodfishCarnivalWithCheese()");
         System.out.println("测试信息：");
         System.out.println("静态初始化器，通过JVM来保证线程安全");
-        BoiledCodfishCarnivalWithCheese.getInstance().showMessage();
+        PeakPostgraduateEntranceExamCloud.getInstance().showMessage();
         System.out.println();
     }
 

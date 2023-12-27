@@ -13,8 +13,8 @@ public class PrototypeFunction {
     public static void PrototypeFn() throws CloneNotSupportedException {
         MemberCache.loadCache();
 
-        System.out.println("请选择要查看的学习小组的学科：\"Math\" \"English\" \"Politics\"" );
-        System.out.println("输入:[view]查看学习小组人数 [quit]离开" );
+        System.out.println("请选择想要访问的学习小组的学科：\"Math\" \"English\" \"Politics\"" );
+        System.out.println("输入:[view]进入访问学习小组 [quit]离开" );
         int counter = 0;
         Map<String,Integer> subjectCounter = new java.util.HashMap<>(Map.of(
                 "Math", 0,
@@ -30,14 +30,14 @@ public class PrototypeFunction {
             if(subjectCounter.containsKey(str)) {
                 subjectCounter.put(str,subjectCounter.get(str)+1);
                 counter++;
-                System.out.println("Here is a "+str+"Member");
+                System.out.println("Enter the "+str+"group and study");
             }
             else {
                 switch (str) {
                     case "view": {
-                        System.out.println("The number of Members:" + counter);
+                        System.out.println("The times of studying with study group:" + counter);
                         for(String subject:subjectCounter.keySet()) {
-                            System.out.println("The number of "+subject+"Member:"+subjectCounter.get(subject));
+                            System.out.println("The times of studying with"+subject+" group:"+subjectCounter.get(subject));
                         }
                         break;
                     }

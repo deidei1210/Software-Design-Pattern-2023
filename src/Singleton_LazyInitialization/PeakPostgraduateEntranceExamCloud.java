@@ -9,6 +9,7 @@ import Composite_new.MenuOption;
 import Facade_new.ExamFacade;
 import FactoryMethod_new.*;
 import Mediator_new.CMediatorFn;
+import Prototype_new.PrototypeFunction;
 import Proxy_new.ProxyScoreSheet;
 import Proxy_new.ScoreSheet;
 import Servant_new.Preparation;
@@ -28,15 +29,15 @@ import Visitor_new.CVisitorFn;
 
 import java.util.Scanner;
 
-public class BoiledCodfishCarnivalWithCheese {
+public class PeakPostgraduateEntranceExamCloud {
 
     //创建 Singleton.AnimalSportMeeting 的一个对象
 
     //让构造函数为 private，这样该类就不会被实例化
-    private BoiledCodfishCarnivalWithCheese() {
+    private PeakPostgraduateEntranceExamCloud() {
     }
 
-    public static BoiledCodfishCarnivalWithCheese getInstance() {
+    public static PeakPostgraduateEntranceExamCloud getInstance() {
         return SingletonHolder.instance;
     }
 
@@ -134,10 +135,10 @@ public class BoiledCodfishCarnivalWithCheese {
         examMenu.add(computerBasics);
 
         MenuOption materialMarket = new MenuOption("顶峰教辅超市", CCommandFn.getInstance());
-        MenuOption queryRank = new MenuOption("询问成绩", element);
-        MenuOption buyEquipment = new MenuOption("买外设", element);
-        MenuOption printRank = new MenuOption("打印成绩单", element);
-        MenuOption meetAudience = new MenuOption("粉丝见面会", element);
+        MenuOption queryRank = new MenuOption("查询模拟考试竞争对手成绩", element);
+        MenuOption buyEquipment = new MenuOption("购买学习辅助神器", element);
+        MenuOption printRank = new MenuOption("打印最终结果成绩单", element);
+        MenuOption meetAudience = new MenuOption("进入学习小组学习", element);
         rootMenu.add(examMenu);
         rootMenu.add(materialMarket);
         rootMenu.add(queryRank);
@@ -292,18 +293,18 @@ public class BoiledCodfishCarnivalWithCheese {
                     proxyScoreSheet.printScoreSheet();
                     break;
                 case 6:
-//                    try {
-//                        PrototypeFunction.PrototypeFn();
-//                    } catch (CloneNotSupportedException e) {
-//                        e.printStackTrace();
-//                    }
+                    try {
+                        PrototypeFunction.PrototypeFn();
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
                 case 0:
                     break;
                 default:
                     break;
             }
             if (examTaken == 5) {
-                System.out.println("所有比赛均已结束！");
+                System.out.println("所有考试均已完成！快和你的学习小组成员一起讨论总结吧！～");
                 break;
             }
 
@@ -315,7 +316,7 @@ public class BoiledCodfishCarnivalWithCheese {
 
     private static class SingletonHolder {
         // 静态初始化器，有JVM来保证线程安全
-        private static BoiledCodfishCarnivalWithCheese instance = new BoiledCodfishCarnivalWithCheese();
+        private static PeakPostgraduateEntranceExamCloud instance = new PeakPostgraduateEntranceExamCloud();
     }
 
 }

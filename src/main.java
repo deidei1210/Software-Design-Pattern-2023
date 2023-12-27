@@ -1,4 +1,4 @@
-import Singleton_LazyInitialization.BoiledCodfishCarnivalWithCheese;
+import Singleton_LazyInitialization.PeakPostgraduateEntranceExamCloud;
 import Singleton_LazyInitialization.MainTest;
 
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class main {
         int opt = input.nextInt();
         //选择的是进入体验，即一行一行进行
         if (opt == 1) {
-            BoiledCodfishCarnivalWithCheese BCWC = BoiledCodfishCarnivalWithCheese.getInstance();
+            PeakPostgraduateEntranceExamCloud BCWC = PeakPostgraduateEntranceExamCloud.getInstance();
             //开启BCWC流程
             BCWC.flowController();
             //直接进行软件设计模式的测试
