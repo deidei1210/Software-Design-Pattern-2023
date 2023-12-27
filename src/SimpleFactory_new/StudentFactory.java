@@ -11,7 +11,9 @@ public class StudentFactory {
         StudentIngredientFactory studentIngredientFactory = new StudentIngredientFactory();
         //创建一个Student类
         Student student = new Student();
+        //设置学生的教育水平
         student.setStudentEducationalLevel(studentIngredientFactory.setEducationalLevel(educationalLevel));
+        //设置学生的目标专业
         student.setStudentTargetMajor(studentIngredientFactory.setTargetMajor(targetMajor));
 
         //随机生成学生的名字
@@ -25,6 +27,15 @@ public class StudentFactory {
         student.setScore(new double[]{0, 0, 0});
         //设置学生的状态，初始状态为good
         student.setStudentState(new StateGood());
+
+        //接下来需要设置学生的反应能力、记忆力、运气、忍耐力、智商
+        student.setReaction(106+(r.nextInt(20)-10));
+        student.setMemoryAbility(98+(r.nextInt(20)-10));
+        student.setLuck(94+(r.nextInt(20)-10));
+        student.setEndurance(104+(r.nextInt(20)-10));
+        student.setIntelligence(100+(r.nextInt(20)-10));
+
+
         return student;
     }
 

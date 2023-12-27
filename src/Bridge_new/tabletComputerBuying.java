@@ -12,6 +12,6 @@ public class tabletComputerBuying extends studentSupply {
     public void supplyBuy(Student student, Supplies supplies)  {
         super.supplyBuy(student, supplies);
         student.setReaction(student.getReaction() + 3);
-        student.setHandspeed(student.getHandspeed() + 2);
+        student.setMemoryAbility(student.getMemoryAbility() + 2);
     }
 }

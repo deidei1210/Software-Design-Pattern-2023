@@ -20,7 +20,7 @@ public class Competition extends Exam implements Preparation {
 
     @Override
     public void examEnd() {
-        setVisited(true);
+        setTaken(true);
     }
 
     @Override

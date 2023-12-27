@@ -10,17 +10,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Exam {
+    //考试的名称
     private String name;
+
+    //参加考试的学生
     private List<Student> StudentLists = new ArrayList<Student>();
+
+    //出题教师
     private Teacher teacher;
+
+    //考试分数
     private double[] score = new double[8];
+
+    //将学生根据序号排列
     private int[] rankByNO = new int[8];
+
+    //将学生根据得分排列
     private int[] rankByRank = new int[8];
-    private boolean isVisited;
-    private int numberOfQuestions; // 题目数量
-    private int examDuration; // 考试时间（分钟）
+
+    //该考试是否已经进行过
+    private boolean isTaken;
+
+    // 题目数量
+    private int numberOfQuestions;
+
+    // 考试时间（分钟）
+    private int examDuration;
 
 
+    //考试的构造函数
     public Exam(String Name) {
         name = Name;
         switch (name) {
@@ -56,7 +74,7 @@ public abstract class Exam {
         for (int i = 0; i < 8; ++i) {
             addStudent(StudentContainer.getInstance().get(i));
         }
-        isVisited = false;
+        isTaken = false;
     }
 
     //getter & setter
@@ -94,12 +112,12 @@ public abstract class Exam {
         return rankByRank;
     }
 
-    public boolean isVisited() {
-        return isVisited;
+    public boolean isTaken() {
+        return isTaken;
     }
 
-    public void setVisited(boolean visited) {
-        isVisited = visited;
+    public void setTaken(boolean taken) {
+        isTaken = taken;
     }
 
     public int getNumberOfQuestions() {return numberOfQuestions;}
@@ -127,7 +145,7 @@ public abstract class Exam {
         }
     }
 
-    //输出测试信息
+    //输出考试信息
     public void showExamInfo() {
         System.out.println("考试名称：" + name);
         System.out.println("参加考试的学生名单：");

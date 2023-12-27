@@ -14,6 +14,9 @@ import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
 import Composite_new.Menu;
 import TemplateAndStrategy_new.AdvancedMath;
+import TemplateAndStrategy_new.CollegeEnglish;
+import TemplateAndStrategy_new.CollegePolitics;
+import TemplateAndStrategy_new.ComputerBasics;
 
 import java.util.Scanner;
 
@@ -138,7 +141,7 @@ public class BoiledCodfishCarnivalWithCheese {
         // 菜单以及选择返回
         rootMenu.printMenu();
         int i = input.nextInt();
-        int examVisited = 0;
+        int examTaken = 0;
         while (i != 0) {
             switch (i) {
                 case 1: {
@@ -147,7 +150,7 @@ public class BoiledCodfishCarnivalWithCheese {
                     switch (input.nextInt()) {
                         case 1:
                             exam = (AdvancedMath) (examMenu.getMenu().get(0).option);
-                            if (exam.isVisited()) {
+                            if (exam.isTaken()) {
                                 System.out.println("该考试已结束，请参加其他科目的模拟测试！");
                                 break;
                             }
@@ -155,74 +158,52 @@ public class BoiledCodfishCarnivalWithCheese {
                             worker1.prepare((Preparation) exam);
                             exam.examStart();
                             exam.examEnd();
-                            ++examVisited;
+                            ++examTaken;
                             break;
                         case 2:
-//                            game = (HeroOfFan) (gameMenu.getMenu().get(1).option);
-//                            if (game.isVisited()) {
-//                                System.out.println("该项目已结束，请参加其他项目！");
-//                                break;
-//                            }
-//                            Worker worker2 = new Worker();
-//                            worker2.prepare((Preparation) game);
-//                            game.gameStart();
-//                            game.gameEnd();
-//                            ++gameVisited;
+                            exam = (CollegeEnglish) (examMenu.getMenu().get(1).option);
+                            if (exam.isTaken()) {
+                                System.out.println("该项目已结束，请参加其他项目！");
+                                break;
+                            }
+                            Worker worker2 = new Worker();
+                            worker2.prepare((Preparation) exam);
+                            exam.examStart();
+                            exam.examEnd();
+                            ++examTaken;
                             break;
                         case 3:
-//                            game = (MagicWarCraft) (gameMenu.getMenu().get(2).option);
-//                            if (game.isVisited()) {
-//                                System.out.println("该项目已结束，请参加其他项目！");
-//                                break;
-//                            }
-//                            Worker worker3 = new Worker();
-//                            worker3.prepare((Preparation) game);
-//                            game.gameStart();
-//                            game.gameEnd();
-//                            ++gameVisited;
+                            exam = (CollegePolitics) (examMenu.getMenu().get(2).option);
+                            if (exam.isTaken()) {
+                                System.out.println("该项目已结束，请参加其他项目！");
+                                break;
+                            }
+                            Worker worker3 = new Worker();
+                            worker3.prepare((Preparation) exam);
+                            exam.examStart();
+                            exam.examEnd();
+                            ++examTaken;
                             break;
                         case 4:
-//                            game = (SeaCraft) (gameMenu.getMenu().get(3).option);
-//                            if (game.isVisited()) {
-//                                System.out.println("该项目已结束，请参加其他项目！");
-//                                break;
-//                            }
-//                            Worker worker4 = new Worker();
-//                            worker4.prepare((Preparation) game);
-//                            game.gameStart();
-//                            game.gameEnd();
-//                            ++gameVisited;
-                            break;
-                        case 5:
-//                            game = (LoreOfLU) (gameMenu.getMenu().get(4).option);
-//                            if (game.isVisited()) {
-//                                System.out.println("该项目已结束，请参加其他项目！");
-//                                break;
-//                            }
-//                            Worker worker5 = new Worker();
-//                            worker5.prepare((Preparation) game);
-//                            game.gameStart();
-//                            game.gameEnd();
-//                            ++gameVisited;
-                            break;
-                        case 6:
-//                            game = (Contest) (gameMenu.getMenu().get(5).option);
-//                            if (game.isVisited()) {
-//                                System.out.println("该项目已结束，请参加其他项目！");
-//                                break;
-//                            }
-//                            game.gameStart();
-//                            game.gameEnd();
-//                            ++gameVisited;
+                            exam = (ComputerBasics) (examMenu.getMenu().get(3).option);
+                            if (exam.isTaken()) {
+                                System.out.println("该项目已结束，请参加其他项目！");
+                                break;
+                            }
+                            Worker worker4 = new Worker();
+                            worker4.prepare((Preparation) exam);
+                            exam.examStart();
+                            exam.examEnd();
+                            ++examTaken;
                             break;
                         case 0:
-//                            forwardWatch.getLast().printMenu();
-//                            i = input.nextInt();
+                            advancedMath.getLast().printMenu();
+                            i = input.nextInt();
                             break;
                         default:
                             break;
                     }
-                    if (examVisited == 5) {
+                    if (examTaken == 4) {
                         System.out.println("");
                     }
                     break;
@@ -303,7 +284,7 @@ public class BoiledCodfishCarnivalWithCheese {
                 default:
                     break;
             }
-            if (examVisited == 5) {
+            if (examTaken == 5) {
                 System.out.println("所有比赛均已结束！");
                 break;
             }

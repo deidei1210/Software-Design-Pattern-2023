@@ -6,12 +6,25 @@ public class Student {
     private String studentName;                         //学生的姓名
     private TargetMajor studentTargetMajor;             //学生的目标专业
     private EducationalLevel studentEducationalLevel;    
+
     //TODO: 思考通过什么类似下面的属性来决定考试分数
+
+    //反应能力
     private double reaction;
-    private double handspeed;
+
+    //记忆力
+    private double memoryAbility;
+
+    //运气
     private double luck;
+
+    //忍耐力
     private double endurance;
+
+    //智力
     private double intelligence;
+
+    //学生的状态
     private StudentState studentState;
     private int[] Rank;
     private double[] Score;
@@ -28,7 +41,7 @@ public class Student {
         studentName = studentTargetMajor.getTargetMajor() + studentEducationalLevel.getEducationalLevel();
         // 临时设置成这样（by hjr），仅为方便别的类开发用
         reaction = 106;
-        handspeed = 98;
+        memoryAbility = 98;
         luck = 96;
         endurance = 104;
         intelligence = 100;
@@ -43,12 +56,12 @@ public class Student {
         this.reaction = reaction;
     }
 
-    public double getHandspeed() {
-        return handspeed;
+    public double getMemoryAbility() {
+        return memoryAbility;
     }
 
-    public void setHandspeed(double handspeed) {
-        this.handspeed = handspeed;
+    public void setMemoryAbility(double memoryAbility) {
+        this.memoryAbility = memoryAbility;
     }
 
     public double getLuck() {

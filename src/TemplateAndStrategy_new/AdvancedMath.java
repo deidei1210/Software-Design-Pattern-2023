@@ -26,6 +26,7 @@ public class AdvancedMath extends Exam implements Preparation {
         System.out.println("高等数学 模拟考试准备完成！");
     }
 
+    //考试开始
     @Override
     public void examStart() {
         try {
@@ -40,6 +41,7 @@ public class AdvancedMath extends Exam implements Preparation {
         sortScore();
     }
 
+    //模拟考试结束
     @Override
     public void examEnd() {
         try {
@@ -49,7 +51,8 @@ public class AdvancedMath extends Exam implements Preparation {
         }
         System.out.println("高等数学 模拟考试结束！");
         System.out.println("高等数学模拟考试最终成绩：");
-        setVisited(true);
+        //表示这个考试已经进行过了
+        setTaken(true);
         for (int i = 1; i <= 8; ++i) {
             System.out.println("模拟考试考号：" + i + "  姓名：" + getStudentLists().get(i - 1).getStudentName() + "  成绩：" + getScore()[i - 1] + "分");
         }
@@ -87,13 +90,15 @@ public class AdvancedMath extends Exam implements Preparation {
             }
         }
     }
+
+    //看上去这边是生成score的方法
     //具体的指标，和dtt商量
     @Override
     public void getValue(int no) {
         Random rand = new Random();
         double random = (rand.nextInt(2000) + 9000);
         Student student = getStudentLists().get(no);
-        double value = (student.getReaction() * 1.5 + student.getLuck() * 1.2 + student.getIntelligence() * 1 + student.getEndurance() * 0.8+student.getHandspeed()*0.5) / student.getStudentState().getState();
+        double value = (student.getReaction() * 1.5 + student.getLuck() * 1.2 + student.getIntelligence() * 1 + student.getEndurance() * 0.8+student.getMemoryAbility()*0.5) / student.getStudentState().getState();
         double result = value * 0.06547 * 2.5 * random / 10000;
         int tmp = (int)(result*100);
         result = tmp/100D;

@@ -24,7 +24,7 @@ public class RealScoreSheet implements ScoreSheet {
                 default:
                     break;
             }
-            if (ExamContainer.getInstance().get(i).isVisited()) {
+            if (ExamContainer.getInstance().get(i).isTaken()) {
                 Exam exam = ExamContainer.getInstance().get(i);
                 for (int j = 1; j <= 8; ++j) {
                     System.out.println("参赛编号：" + j + "  姓名：" + exam.getStudentLists().get(j - 1).getStudentName() + "  成绩：" + exam.getScore()[j - 1] + "分");

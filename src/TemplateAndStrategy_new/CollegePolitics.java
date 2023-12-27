@@ -1,7 +1,7 @@
 package TemplateAndStrategy_new;
 
 import Builder_new.Exam;
-import Observer.ScoreSubject;
+import Observer_new.ScoreSubject;
 import Servant_new.Preparation;
 import SimpleFactory_new.Student;
 import State_new.StateGood;
@@ -49,7 +49,7 @@ public class CollegePolitics extends Exam implements Preparation {
         }
         System.out.println("大学政治 模拟考试结束！");
         System.out.println("大学政治模拟考试最终成绩：");
-        setVisited(true);
+        setTaken(true);
         for (int i = 1; i <= 8; ++i) {
             System.out.println("模拟考试考号：" + i + "  姓名：" + getStudentLists().get(i - 1).getStudentName() + "  成绩：" + getScore()[i - 1] + "分");
         }
@@ -93,7 +93,7 @@ public class CollegePolitics extends Exam implements Preparation {
         Random rand = new Random();
         double random = (rand.nextInt(2000) + 9000);
         Student student = getStudentLists().get(no);
-        double value = (student.getReaction() * 1.5 + student.getLuck() * 1.2 + student.getIntelligence() * 1 + student.getEndurance() * 0.8+student.getHandspeed()*0.5) / student.getStudentState().getState();
+        double value = (student.getReaction() * 1.5 + student.getLuck() * 1.2 + student.getIntelligence() * 1 + student.getEndurance() * 0.8+student.getMemoryAbility()*0.5) / student.getStudentState().getState();
         double result = value * 0.06547 * 2.5 * random / 10000;
         int tmp = (int)(result*100);
         result = tmp/100D;
