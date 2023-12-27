@@ -10,7 +10,10 @@ public class AliPay {
 
     public AliPay() {
         System.out.println("你选择了使用Alipay支付");
-        type = 1;
+        //接受用户的输入
+        Scanner scan = new Scanner(System.in);
+        System.out.println("请选择Alipay的支付功能：\n1、余额  2、花呗");
+        type = scan.nextInt();
     }
 
     public void specialPay() {

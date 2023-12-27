@@ -1,6 +1,7 @@
 package Command_new;
 
 import Adapter_new.AliAdapter;
+import Adapter_new.CardPay;
 import Adapter_new.WechatPay;
 import Memento_new.CareTaker;
 import Decorator_new.Book;
@@ -91,7 +92,7 @@ public class CCommandFn {
             System.out.println("现价为：" + result);
             Scanner scan = new Scanner(System.in);
             int type;
-            System.out.println("请选择你要使用的支付方式：\n1、Ali支付  2、WeChat支付");
+            System.out.println("请选择你要使用的支付方式：\n1、Ali支付  2、WeChat支付 3、银行卡支付");
             type = scan.nextInt();
             switch (type) {
                 case 1: {
@@ -102,6 +103,11 @@ public class CCommandFn {
                 case 2: {
                     //使用微信
                     new WechatPay().pay();
+                    break;
+                }
+                case 3:{
+                    //使用银行卡
+                    new CardPay().pay();
                     break;
                 }
             }

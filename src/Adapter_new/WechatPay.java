@@ -13,6 +13,7 @@ public class WechatPay implements Pay {
     public void pay() {
         System.out.println("你选择了使用WeChat支付");
         money = 100;
+        System.out.println("你通过WeChat支付了" + money + "元");
     }
 
 }
