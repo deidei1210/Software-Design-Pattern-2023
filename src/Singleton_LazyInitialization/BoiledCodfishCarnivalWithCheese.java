@@ -3,11 +3,14 @@ package Singleton_LazyInitialization;
 import Builder_new.Exam;
 import Builder_new.ExamsBuilder;
 
+import Command_new.CCommandFn;
+import Composite_new.MenuOption;
 import Facade_new.ExamFacade;
 import SimpleFactory_new.Student;
 import SimpleFactory_new.StudentFactory;
 import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
+import Composite_new.Menu;
 
 import java.util.Scanner;
 
@@ -99,40 +102,38 @@ public class BoiledCodfishCarnivalWithCheese {
         //玩家检入
         ExamFacade facade = new ExamFacade();
         facade.method();
-//        //比赛正式开始
-//        //设置测试用菜单
-//        Menu rootMenu = new Menu("大厅选择");
-//        //第一个比赛菜单
-//        Menu gameMenu = new Menu("比赛");
-//        //创建比赛实例
-//        int element = 0;
-//        MenuOption forwardWatch = new MenuOption("守望前锋：再也不来", GameContainer.getInstance().get(0));
-//        MenuOption heroOfFan = new MenuOption("风扇英雄", GameContainer.getInstance().get(1));
-//        MenuOption mgaicWarCraft = new MenuOption("魔怪争霸2", GameContainer.getInstance().get(2));
-//        MenuOption seaCraft = new MenuOption("星河争霸3", GameContainer.getInstance().get(3));
-//        MenuOption loreOfLU = new MenuOption("卢氏传说", GameContainer.getInstance().get(4));
-//        MenuOption contest = new MenuOption("对抗赛", GameContainer.getInstance().get(5));
-//        // 向比赛菜单中添加6个选项
-//        // 可在此处创建6个比赛实例替换 Add 中参数 element  后续同理
-//        gameMenu.add(forwardWatch);
-//        gameMenu.add(heroOfFan);
-//        gameMenu.add(mgaicWarCraft);
-//        gameMenu.add(seaCraft);
-//        gameMenu.add(loreOfLU);
-//        gameMenu.add(contest);
-//        MenuOption canteen = new MenuOption("嘉年华食堂(芜湖赞助)", CCommandFn.getInstance());
-//        MenuOption queryRank = new MenuOption("询问成绩", element);
-//        MenuOption buyEquipment = new MenuOption("买外设", element);
-//        MenuOption printRank = new MenuOption("打印成绩单", element);
-//        MenuOption meetAudience = new MenuOption("粉丝见面会", element);
-//        rootMenu.add(gameMenu);
-//        rootMenu.add(canteen);
-//        rootMenu.add(queryRank);
-//        rootMenu.add(buyEquipment);
-//        rootMenu.add(printRank);
-//        rootMenu.add(meetAudience);
-//        // 菜单以及选择返回
-//        rootMenu.printMenu();
+        //考试正式开始
+        //设置测试用菜单
+        Menu rootMenu = new Menu("系统功能选项");
+        //第一个考试菜单
+        Menu examMenu = new Menu("选择考试科目");
+        //创建考试实例
+        int element = 0;
+        MenuOption advancedMath = new MenuOption("高等数学", ExamContainer.getInstance().get(0));
+        MenuOption collegeEnglish = new MenuOption("大学英语", ExamContainer.getInstance().get(1));
+        MenuOption collegePolitics = new MenuOption("大学政治", ExamContainer.getInstance().get(2));
+        MenuOption computerBasics = new MenuOption("计算机408", ExamContainer.getInstance().get(3));
+
+        // 向考试菜单中添加4个选项
+        // 可在此处创建4个比赛实例替换 Add 中参数 element  后续同理
+        examMenu.add(advancedMath);
+        examMenu.add(collegeEnglish);
+        examMenu.add(collegePolitics);
+        examMenu.add(computerBasics);
+
+        MenuOption materialMarket = new MenuOption("顶峰教辅超市", CCommandFn.getInstance());
+        MenuOption queryRank = new MenuOption("询问成绩", element);
+        MenuOption buyEquipment = new MenuOption("买外设", element);
+        MenuOption printRank = new MenuOption("打印成绩单", element);
+        MenuOption meetAudience = new MenuOption("粉丝见面会", element);
+        rootMenu.add(examMenu);
+        rootMenu.add(materialMarket);
+        rootMenu.add(queryRank);
+        rootMenu.add(buyEquipment);
+        rootMenu.add(printRank);
+        rootMenu.add(meetAudience);
+        // 菜单以及选择返回
+        rootMenu.printMenu();
 //        int i = input.nextInt();
 //        int gameVisited = 0;
 //        while (i != 0) {

@@ -97,8 +97,8 @@ public class Student {
     }
 
     //获取学生的教育程度
-    public EducationalLevel getStudentEducationalLevel() {
-        return studentEducationalLevel;
+    public String getStudentEducationalLevel() {
+        return studentEducationalLevel.getEducationalLevel();
     }
 
     //设置学生的教育程度
