@@ -5,7 +5,7 @@ public class ArtificialIntelligence implements TargetMajor {
 
     @Override
     public String getTargetMajor() {
-        return "Student want artificial intelligence";
+        return "artificial intelligence";
     }
 
 }

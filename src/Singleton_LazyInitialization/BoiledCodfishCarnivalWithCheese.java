@@ -6,6 +6,7 @@ import Builder_new.ExamsBuilder;
 import Command_new.CCommandFn;
 import Composite_new.MenuOption;
 import Facade_new.ExamFacade;
+import Mediator_new.CMediatorFn;
 import Servant_new.Preparation;
 import Servant_new.Worker;
 import SimpleFactory_new.Student;
@@ -13,6 +14,8 @@ import SimpleFactory_new.StudentFactory;
 import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
 import Composite_new.Menu;
+import State_new.StateGood;
+import State_new.StatePerfect;
 import TemplateAndStrategy_new.AdvancedMath;
 import TemplateAndStrategy_new.CollegeEnglish;
 import TemplateAndStrategy_new.CollegePolitics;
@@ -144,10 +147,12 @@ public class BoiledCodfishCarnivalWithCheese {
         int examTaken = 0;
         while (i != 0) {
             switch (i) {
+                //如果选择1，说明要进行模拟考试
                 case 1: {
                     examMenu.printMenu();
                     Exam exam;
                     switch (input.nextInt()) {
+                        //进行高等数学的考试
                         case 1:
                             exam = (AdvancedMath) (examMenu.getMenu().get(0).option);
                             if (exam.isTaken()) {
@@ -160,6 +165,7 @@ public class BoiledCodfishCarnivalWithCheese {
                             exam.examEnd();
                             ++examTaken;
                             break;
+                        //进行大学英语的考试
                         case 2:
                             exam = (CollegeEnglish) (examMenu.getMenu().get(1).option);
                             if (exam.isTaken()) {
@@ -172,6 +178,7 @@ public class BoiledCodfishCarnivalWithCheese {
                             exam.examEnd();
                             ++examTaken;
                             break;
+                        //进行大学政治的考试
                         case 3:
                             exam = (CollegePolitics) (examMenu.getMenu().get(2).option);
                             if (exam.isTaken()) {
@@ -184,6 +191,7 @@ public class BoiledCodfishCarnivalWithCheese {
                             exam.examEnd();
                             ++examTaken;
                             break;
+                        //进行408考试
                         case 4:
                             exam = (ComputerBasics) (examMenu.getMenu().get(3).option);
                             if (exam.isTaken()) {
@@ -196,6 +204,7 @@ public class BoiledCodfishCarnivalWithCheese {
                             exam.examEnd();
                             ++examTaken;
                             break;
+                        //返回上一层菜单
                         case 0:
                             advancedMath.getLast().printMenu();
                             i = input.nextInt();
@@ -208,30 +217,34 @@ public class BoiledCodfishCarnivalWithCheese {
                     }
                     break;
                 }
+                //进行教辅资料测采购，进行刷题来提升自己的水平
                 case 2:
-//                    CCommandFn CCommandFn = (CCommandFn) rootMenu.getMenu().get(1).option;
-//                    boolean isFood = false;
-//                    try {
-//                        isFood = CCommandFn.CommandFn();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                    if(isFood){
-//                        System.out.println("马厨师(做的饭)很下饭，状态提升！");
-//                        switch (player.getPlayerState().toString()) {
-//                            case "StatePerfect":
-//                                break;
-//                            case "StateGood":
-//                                player.setPlayerState(new StatePerfect());
-//                                break;
-//                            case "StateTired":
-//                                player.setPlayerState(new StateGood());
-//                                break;
-//                            default:
-//                                break;
-//                        }
-//                        CMediatorFn.getInstance().MediateFn();
-//                    }
+                    CCommandFn CCommandFn = (CCommandFn) rootMenu.getMenu().get(1).option;
+                    boolean isBook = false;
+                    try {
+                        isBook = CCommandFn.CommandFn();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if(isBook){
+                        System.out.println("你买了这些教辅资料之后进行了孜孜不倦地刷题，状态获得了提升！");
+                        switch (student.getStudentState().toString()) {
+                            case "StatePerfect":
+                                break;
+                            case "StateGood":
+                                student.setStudentState(new StatePerfect());
+                                break;
+                            case "StateTired":
+                                student.setStudentState(new StateGood());
+                                break;
+                            default:
+                                break;
+                        }
+                        CMediatorFn.getInstance().MediateFn();
+                    }
+//                    重新进行选择
+                    rootMenu.printMenu();
+                    i = input.nextInt();
                     break;
                 case 3:
 //                    System.out.println("输入要询问的玩家编号：");
@@ -292,7 +305,7 @@ public class BoiledCodfishCarnivalWithCheese {
 //            rootMenu.printMenu();
 //            i = input.nextInt();
         }
-        System.out.println("芝士煲鳕嘉年华到此结束！");
+        System.out.println("考研顶峰云系统已关闭！欢迎您的再一次使用！");
     }
 
     private static class SingletonHolder {

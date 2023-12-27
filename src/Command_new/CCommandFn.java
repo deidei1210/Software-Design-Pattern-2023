@@ -24,14 +24,14 @@ public class CCommandFn {
 
     public boolean CommandFn() throws InterruptedException {
 
-        System.out.println("\n欢迎来到嘉年华大食堂(芜湖赞助)，您今天想吃什么？");
+        System.out.println("\n欢迎来到顶峰考研云教辅资料采购中心，我们为您准备了丰富多样的教辅资料可以采购，请问您想采购些什么？");
         System.out.println("[0]跑路 [1]2025考研数学武忠祥 [2]考研政治肖秀荣 [3]考研英语红宝书:");
         int i;
+        //选择需要采购的教材
         Scanner scan_input = new Scanner(System.in);
         i = scan_input.nextInt();
         boolean isOrder = false;  //判断是否点单成功
-        while (true) {
-            if (i == 0) break;
+        while (i != 0) {
             switch (i) {
                 case 1: {
                     //2025考研数学武忠祥
@@ -71,7 +71,7 @@ public class CCommandFn {
             }
             i = 0;
             if (!isOrder) {
-                System.out.println("\n欢迎来到嘉年华大食堂(芜湖赞助)，您今天想吃什么？");
+                System.out.println("\n欢迎来到顶峰考研云教辅资料采购中心，我们为您准备了丰富多样的教辅资料可以采购，请问您想采购些什么？");
                 System.out.println("[0]跑路 [1]2025考研数学武忠祥 [2]考研政治肖秀荣 [3]考研英语红宝书:");
                 i = scan_input.nextInt();
             }

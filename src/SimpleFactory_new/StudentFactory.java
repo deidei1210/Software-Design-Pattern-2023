@@ -2,6 +2,7 @@ package SimpleFactory_new;
 
 import State_new.StateGood;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class StudentFactory {
@@ -29,12 +30,21 @@ public class StudentFactory {
         student.setStudentState(new StateGood());
 
         //接下来需要设置学生的反应能力、记忆力、运气、忍耐力、智商
-        student.setReaction(106+(r.nextInt(20)-10));
-        student.setMemoryAbility(98+(r.nextInt(20)-10));
-        student.setLuck(94+(r.nextInt(20)-10));
-        student.setEndurance(104+(r.nextInt(20)-10));
-        student.setIntelligence(100+(r.nextInt(20)-10));
-
+        //如果学生是二战考研的话，往往没有一战来的好
+        if(Objects.equals(student.getStudentEducationalLevel(), "Graduate")) {
+            student.setReaction(106 + (r.nextInt(20) - 10));
+            student.setMemoryAbility(98 + (r.nextInt(20) - 10));
+            student.setLuck(94 + (r.nextInt(20) - 5));
+            student.setEndurance(104 + (r.nextInt(20) - 15));
+            student.setIntelligence(100 + (r.nextInt(20) - 10));
+        }
+        else{
+            student.setReaction(106 + (r.nextInt(20) - 5));
+            student.setMemoryAbility(98 + (r.nextInt(20) - 5));
+            student.setLuck(94 + (r.nextInt(20) - 10));
+            student.setEndurance(104 + (r.nextInt(20) - 10));
+            student.setIntelligence(100 + (r.nextInt(20) - 5));
+        }
 
         return student;
     }

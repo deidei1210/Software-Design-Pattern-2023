@@ -58,7 +58,7 @@ public class OrderStudyMaterials {
                 return true;
             }
             System.out.println("\n您可以继续选择配料:");
-            System.out.println("[0]润 [1]错题本 [2]水笔 [3]模拟答题卡 [4]撤销 [5]重做 [6]选好了:");
+            System.out.println("[0]离开 [1]错题本 [2]水笔 [3]模拟答题卡 [4]撤销选择 [5]重新选择 [6]选好了:");
             j = scan_input1.nextInt();
         }
         return false;

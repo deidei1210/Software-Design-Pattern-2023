@@ -5,7 +5,7 @@ public class Other implements TargetMajor{
 
     @Override
     public String getTargetMajor() {
-        return "Student want other major";
+        return "other major";
     }
 
 }

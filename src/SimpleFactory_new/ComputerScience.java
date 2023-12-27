@@ -4,6 +4,6 @@ package SimpleFactory_new;
 public class ComputerScience implements TargetMajor {
     @Override
     public String getTargetMajor() {
-        return "Student want Computer Science";
+        return "Computer Science";
     }
 }
