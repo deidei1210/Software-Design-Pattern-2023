@@ -1,31 +1,31 @@
 package Singleton_LazyInitialization;
 
-import Bridge_new.*;
-import Builder_new.Exam;
-import Builder_new.ExamsBuilder;
+import Bridge.*;
+import Builder.Exam;
+import Builder.ExamsBuilder;
 
-import Command_new.CCommandFn;
-import Composite_new.MenuOption;
-import Facade_new.ExamFacade;
-import FactoryMethod_new.*;
-import Mediator_new.CMediatorFn;
-import Prototype_new.PrototypeFunction;
-import Proxy_new.ProxyScoreSheet;
-import Proxy_new.ScoreSheet;
-import Servant_new.Preparation;
-import Servant_new.Worker;
-import SimpleFactory_new.Student;
-import SimpleFactory_new.StudentFactory;
-import Iterator_new.ExamContainer;
-import Iterator_new.StudentContainer;
-import Composite_new.Menu;
-import State_new.StateGood;
-import State_new.StatePerfect;
-import TemplateAndStrategy_new.AdvancedMath;
-import TemplateAndStrategy_new.CollegeEnglish;
-import TemplateAndStrategy_new.CollegePolitics;
-import TemplateAndStrategy_new.ComputerBasics;
-import Visitor_new.CVisitorFn;
+import Command.CCommandFn;
+import Composite.MenuOption;
+import Facade.ExamFacade;
+import FactoryMethod.*;
+import Mediator.CMediatorFn;
+import Prototype.PrototypeFunction;
+import Proxy.ProxyScoreSheet;
+import Proxy.ScoreSheet;
+import Servant.Preparation;
+import Servant.Worker;
+import SimpleFactory.Student;
+import SimpleFactory.StudentFactory;
+import Iterator.ExamContainer;
+import Iterator.StudentContainer;
+import Composite.Menu;
+import State.StateGood;
+import State.StatePerfect;
+import TemplateAndStrategy.AdvancedMath;
+import TemplateAndStrategy.CollegeEnglish;
+import TemplateAndStrategy.CollegePolitics;
+import TemplateAndStrategy.ComputerBasics;
+import Visitor.CVisitorFn;
 
 import java.util.Scanner;
 

@@ -1,52 +1,52 @@
 package Singleton_LazyInitialization;
 
-import AbstractFactory_new.Teacher;
-import AbstractFactory_new.TeacherStore;
-import Adapter_new.AliAdapter;
-import Bridge_new.PerfectSupply;
-import Bridge_new.ReadingLampBuying;
-import Bridge_new.StudentSupply;
-import Bridge_new.SupplyBuyer;
-import Builder_new.Exam;
-import Builder_new.ExamsBuilder;
-import Command_new.AddCardCommand;
-import Command_new.AddPenCommand;
-import Command_new.Command;
-import Command_new.OrderMathBookCommand;
-import Command_new.CCommandFn;
-import DAO_new.StudentDao;
-import DAO_new.StudentDaoImpl;
-import Decorator_new.Book;
-import FactoryMethod_new.ReadingLampFactory;
-import FactoryMethod_new.Supplies;
-import FactoryMethod_new.TabletComputerFactory;
-import Iterator_new.ExamContainer;
-import Iterator_new.StudentContainer;
-import MVC_new.StudentController;
-import MVC_new.StudentView;
-import Memento_new.*;
-import Composite_new.Menu;
-import Composite_new.MenuOption;
-import Facade_new.ExamFacade;
-import Filter_new.Criteria;
-import Filter_new.SECriteria;
+import AbstractFactory.Teacher;
+import AbstractFactory.TeacherStore;
+import Adapter.AliAdapter;
+import Bridge.PerfectSupply;
+import Bridge.ReadingLampBuying;
+import Bridge.StudentSupply;
+import Bridge.SupplyBuyer;
+import Builder.Exam;
+import Builder.ExamsBuilder;
+import Command.AddCardCommand;
+import Command.AddPenCommand;
+import Command.Command;
+import Command.OrderMathBookCommand;
+import Command.CCommandFn;
+import DAO.StudentDao;
+import DAO.StudentDaoImpl;
+import Decorator.Book;
+import FactoryMethod.ReadingLampFactory;
+import FactoryMethod.Supplies;
+import FactoryMethod.TabletComputerFactory;
+import Iterator.ExamContainer;
+import Iterator.StudentContainer;
+import MVC.StudentController;
+import MVC.StudentView;
+import Memento.*;
+import Composite.Menu;
+import Composite.MenuOption;
+import Facade.ExamFacade;
+import Filter.Criteria;
+import Filter.SECriteria;
 import Interpreter.ExchangePrice;
 import Interpreter.OriginalPrice;
 import Interpreter.Price;
-import Mediator_new.ConcretePlayer;
-import Mediator_new.ConcreteMediator;
-import Mediator_new.ConcreteOthers;
+import Mediator.ConcretePlayer;
+import Mediator.ConcreteMediator;
+import Mediator.ConcreteOthers;
 import NullObject.AbstractCustomer;
 import NullObject.CustomerFactory;
-import Flyweight_new.AttributeFactory;
-import Prototype_new.EnglishMember;
-import Proxy_new.ProxyScoreSheet;
-import Proxy_new.ScoreSheet;
-import Servant_new.Preparation;
-import SimpleFactory_new.Student;
-import SimpleFactory_new.StudentFactory;
-import TransferObject_new.StudentBO;
-import Visitor_new.CVisitorFn;
+import Flyweight.AttributeFactory;
+import Prototype.EnglishMember;
+import Proxy.ProxyScoreSheet;
+import Proxy.ScoreSheet;
+import Servant.Preparation;
+import SimpleFactory.Student;
+import SimpleFactory.StudentFactory;
+import TransferObject.StudentBO;
+import Visitor.CVisitorFn;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -623,12 +623,12 @@ public class MainTest {
         System.out.println("测试信息：");
         StudentDao studentDao = new StudentDaoImpl();
         //输出所有的运动员
-        for (DAO_new.Student student : studentDao.getAllStudents()) {
+        for (DAO.Student student : studentDao.getAllStudents()) {
             System.out.println("编号 : "
                     + student.getRollNo() + ", 姓名 : " + student.getName());
         }
         //更新运动员
-        DAO_new.Student student = studentDao.getAllStudents().get(0);
+        DAO.Student student = studentDao.getAllStudents().get(0);
         student.setName("ShowMaker");
         studentDao.updateStudent(student);
         //获取运动员
