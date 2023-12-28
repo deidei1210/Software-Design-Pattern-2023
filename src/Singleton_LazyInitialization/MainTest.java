@@ -22,8 +22,8 @@ import FactoryMethod_new.Supplies;
 import FactoryMethod_new.TabletComputerFactory;
 import Iterator_new.ExamContainer;
 import Iterator_new.StudentContainer;
-import MVC.StudentController;
-import MVC.StudentView;
+import MVC_new.StudentController;
+import MVC_new.StudentView;
 import Memento_new.*;
 import Composite_new.Menu;
 import Composite_new.MenuOption;
@@ -51,8 +51,6 @@ import Visitor_new.CVisitorFn;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static Flyweight.FansFlyweight.getRandomAge;
-import static Flyweight.FansFlyweight.getRandomSex;
 
 public class MainTest {
     //单例模式
@@ -452,14 +450,14 @@ public class MainTest {
     //19 享元模式（Flyweight Pattern）
     public void FlyweightTest() {
         System.out.println("19 享元模式（Flyweight Pattern）");
-        System.out.println("包:Prototpye_Flyweight");
+        System.out.println("包:Prototype_Flyweight");
         System.out.println("类：AttributeFactory");
         System.out.println("实现接口：AttributeFactory.setEDGAudience()");
         System.out.println("测试信息：");
         System.out.println("自习室创建成功！");
         EnglishMember englishMember = (EnglishMember) AttributeFactory.setMember("English","Tong ji");
-        englishMember.setAge(getRandomAge());
-        englishMember.setSex(getRandomSex());
+//        englishMember.setAge(getRandomAge());
+//        englishMember.setSex(getRandomSex());
         System.out.println();
         waitForEnter();
 
@@ -473,13 +471,13 @@ public class MainTest {
         System.out.println("实现接口：AudienceCache.getAudience(String audienceId)");
         System.out.println("测试信息：");
         EnglishMember englishMember1 = (EnglishMember) AttributeFactory.setMember("English","Tong ji");
-        englishMember1.setAge(getRandomAge());
-        englishMember1.setSex(getRandomSex());
+//        englishMember1.setAge(getRandomAge());
+//        englishMember1.setSex(getRandomSex());
 //        EDGFans1.printClub();
         System.out.println("Clone Successfully!");
         EnglishMember englishMember2 = (EnglishMember) AttributeFactory.setMember("English","Tong ji");
-        englishMember2.setAge(getRandomAge());
-        englishMember2.setSex(getRandomSex());
+//        englishMember2.setAge(getRandomAge());
+//        englishMember2.setSex(getRandomSex());
 //        EDGFans2.printClub();
         System.out.println();
         waitForEnter();

@@ -1,8 +1,8 @@
 package MVC_new;
 
 
-import MVC.StudentController;
-import MVC.StudentView;
+import MVC_new.StudentController;
+import MVC_new.StudentView;
 import SimpleFactory_new.Student;
 import SimpleFactory_new.StudentFactory;
 

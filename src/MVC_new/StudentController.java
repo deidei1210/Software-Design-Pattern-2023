@@ -1,4 +1,4 @@
-package MVC;
+package MVC_new;
 
 
 import SimpleFactory_new.Student;
@@ -11,6 +11,7 @@ public class StudentController {
         this.model = model;
         this.view = views;
     }
+
 
     public void setStudentName(String name){
         model.setStudentName(name);

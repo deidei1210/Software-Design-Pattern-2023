@@ -1,17 +1,17 @@
 package NullObject;
 
-import Iterator.PlayerContainer;
+import Iterator_new.StudentContainer;
 
 import java.util.*;
 
 public class CustomerFactory {
 
-    private ArrayList<String> names = new ArrayList<>();
+    private final ArrayList<String> names = new ArrayList<>();
 
     //将对象全部加入name中
     public CustomerFactory() {
-        for (int i = 0; i < PlayerContainer.getInstance().size(); ++i) {
-            names.add(PlayerContainer.getInstance().get(i).getPlayerName());
+        for (int i = 0; i < StudentContainer.getInstance().size(); ++i) {
+            names.add(StudentContainer.getInstance().get(i).getStudentName());
         }
     }
 
