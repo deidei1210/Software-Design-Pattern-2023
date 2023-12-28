@@ -43,7 +43,7 @@ public class PeakPostgraduateEntranceExamCloud {
 
     //测试信息
     public void showMessage() {
-        System.out.println("ASM Created Successfully!");
+        System.out.println("顶峰考研云模拟考试系统已经成功开启!");
     }
 
     //流程控制器
