@@ -8,8 +8,7 @@ import java.util.Random;
 
 public class Competitors {
 
-    private ArrayList<Competitor> competitors = new ArrayList<>();
-    private Competitor presentCompetitor;
+    private final ArrayList<Competitor> competitors = new ArrayList<>();
 
     public Competitors() {
         for (int i = 0; i < 8; ++i) {
@@ -21,7 +20,7 @@ public class Competitors {
 
     public void fight() {
         int i = 1;
-        presentCompetitor = competitors.get(0);
+        Competitor presentCompetitor = competitors.get(0);
         presentCompetitor.setNextAbstractOpponent(competitors.get(1));
 
         while (i < competitors.size()) {

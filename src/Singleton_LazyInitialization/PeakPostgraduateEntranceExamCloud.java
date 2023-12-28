@@ -138,13 +138,13 @@ public class PeakPostgraduateEntranceExamCloud {
         MenuOption queryRank = new MenuOption("查询模拟考试竞争对手成绩", element);
         MenuOption buyEquipment = new MenuOption("购买学习辅助神器", element);
         MenuOption printRank = new MenuOption("打印最终结果成绩单", element);
-        MenuOption meetAudience = new MenuOption("进入学习小组学习", element);
+        MenuOption studyInStudyGroup = new MenuOption("进入学习小组学习", element);
         rootMenu.add(examMenu);
         rootMenu.add(materialMarket);
         rootMenu.add(queryRank);
         rootMenu.add(buyEquipment);
         rootMenu.add(printRank);
-        rootMenu.add(meetAudience);
+        rootMenu.add(studyInStudyGroup);
         // 菜单以及选择返回
         rootMenu.printMenu();
         int i = input.nextInt();

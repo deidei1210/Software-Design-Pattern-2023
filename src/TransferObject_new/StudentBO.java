@@ -11,18 +11,18 @@ public class StudentBO {
 
     public StudentBO() {
         students = new ArrayList<>();
-        Student student1 = new StudentFactory().createStudent("IG", "China");
-        Student student2 = new StudentFactory().createStudent("EDG", "Japan");
-        Student student3 = new StudentFactory().createStudent("RNG", "America");
+        Student student1 = StudentFactory.createStudent("Software Engineering", "Graduate");
+        Student student2 = StudentFactory.createStudent("Artificial Intelligence", "Undergraduate");
+        Student student3 = StudentFactory.createStudent("Other", "Undergraduate");
         students.add(student1);
         students.add(student2);
         students.add(student3);
     }
 
-    //删除动物
+    //删除学生
     public void deleteStudent(Student student) {
         students.remove(student);
-        System.out.println(student.getStudentName() + "已经离开了!");
+        System.out.println(student.getStudentName() + "已经离开考场了!");
     }
 
     //getter
@@ -37,6 +37,6 @@ public class StudentBO {
     //更新动物列表
     public void updateStudent(Student student) {
         students.add(student);
-        System.out.println(student.getStudentName() + ", 加入了芝士煲雪嘉年华!");
+        System.out.println(student.getStudentName() + ", 加入了顶峰考研云模拟试场!");
     }
 }
