@@ -30,15 +30,9 @@ import Composite_new.MenuOption;
 import Facade_new.ExamFacade;
 import Filter_new.Criteria;
 import Filter_new.SECriteria;
-import FrontController.Controller;
-import InterceptingFilter.AuthenticationFilter;
-import InterceptingFilter.FilterManager;
-import InterceptingFilter.HealthIdentification;
-import InterceptingFilter.LoggerFilter;
 import Interpreter.ExchangePrice;
 import Interpreter.OriginalPrice;
 import Interpreter.Price;
-import Iterator.PlayerContainer;
 import Mediator_new.ConcretePlayer;
 import Mediator_new.ConcreteMediator;
 import Mediator_new.ConcreteOthers;
@@ -49,7 +43,6 @@ import Prototype_new.EnglishMember;
 import Proxy_new.ProxyScoreSheet;
 import Proxy_new.ScoreSheet;
 import Servant_new.Preparation;
-import SimpleFactory.Player;
 import SimpleFactory_new.Student;
 import SimpleFactory_new.StudentFactory;
 import TransferObject_new.StudentBO;
@@ -102,8 +95,7 @@ public class MainTest {
         FilterTest();
         AdapterTest();
         InterpreterTest();
-        FrontControllerTest();
-        InterceptingFilterTest();
+
     }
 
     public static void waitForEnter() {
@@ -706,36 +698,6 @@ public class MainTest {
         System.out.println("折扣价为：" + result);
         System.out.println();
         waitForEnter();
-    }
-
-    //32 前端控制器模式（Front Controller Pattern）
-    public void FrontControllerTest() {
-        System.out.println("32 前端控制器模式（Front Controller Pattern）");
-        System.out.println("包:FrontController");
-        System.out.println("类：Controller");
-        System.out.println("实现接口：Controller.dispatchRequest(String)");
-        System.out.println("测试信息：");
-        Controller frontController = new Controller();
-        frontController.dispatchRequest("JUDGE");
-        frontController.dispatchRequest("PLAYER");
-        System.out.println();
-        waitForEnter();
-    }
-
-    //33 拦截过滤器模式（Intercepting Filter Pattern）
-    public void InterceptingFilterTest() {
-        System.out.println("33 拦截过滤器模式（Intercepting Filter Pattern）");
-        System.out.println("包:InterceptingFilter");
-        System.out.println("类：Controller");
-        System.out.println("实现接口：FilterManager.filterRequest(String)");
-        System.out.println("测试信息：");
-        FilterManager filterManager = new FilterManager(new HealthIdentification());
-        filterManager.setFilter(new AuthenticationFilter());
-        filterManager.setFilter(new LoggerFilter());
-        filterManager.filterRequest("Student:Software Engineering Undergraduate");
-        System.out.println();
-        waitForEnter();
-
     }
 
 }
