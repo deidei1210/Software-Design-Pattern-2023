@@ -14,7 +14,7 @@ public class StudyMaterialDecorator extends Decorator.Book {
     }
 
     public String getDescription() {
-        return "null";
+        return super.getDescription();
     }
 
 }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class CareTaker {
     //一个用于维护命令和备忘录的类
     private int mementoIndex = -1;
-    private final ArrayList<Memento> bookOrderList = new ArrayList<Memento>();  //备忘录栈
+    private final ArrayList<Memento> bookOrderList = new ArrayList<>();  //备忘录栈
     private final ArrayDeque<Command> redoCommands = new ArrayDeque<>();    //redo命令栈
     private final ArrayDeque<Command> commands = new ArrayDeque<>();    //命令栈
 

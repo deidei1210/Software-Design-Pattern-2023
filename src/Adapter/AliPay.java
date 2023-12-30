@@ -3,9 +3,6 @@ package Adapter;
 import java.util.Scanner;
 
 public class AliPay {
-    //支付宝的特殊支付模式
-//    int money;
-    Scanner scan = new Scanner(System.in);
     private final int type;
 
     public AliPay() {
