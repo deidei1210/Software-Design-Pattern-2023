@@ -320,7 +320,7 @@ public class MainTest {
         CareTaker orderList = new CareTaker();
         Command orderMathBook = new OrderMathBookCommand();
         orderMathBook.execute();
-        Book myMathBook = orderMathBook.getMyBook();
+        Book myMathBook = orderMathBook.myBook();
         orderList.append(orderMathBook, myMathBook.createMemento());
         System.out.println("你的点单: " + myMathBook.getDescription());
         System.out.println();
@@ -337,7 +337,7 @@ public class MainTest {
         CareTaker orderList = new CareTaker();
         Command orderMathBook = new OrderMathBookCommand();
         orderMathBook.execute();
-        Book myMathBook = orderMathBook.getMyBook();
+        Book myMathBook = orderMathBook.myBook();
         orderList.append(orderMathBook, myMathBook.createMemento());
         Command addPen = new AddPenCommand(myMathBook);
         addPen.execute();
@@ -361,7 +361,7 @@ public class MainTest {
         CareTaker orderList = new CareTaker();
         Command orderPancake = new OrderMathBookCommand();
         orderPancake.execute();
-        Book myMathBook = orderPancake.getMyBook();
+        Book myMathBook = orderPancake.myBook();
         orderList.append(orderPancake, myMathBook.createMemento());
         Command addPen = new AddPenCommand(myMathBook);
         addPen.execute();

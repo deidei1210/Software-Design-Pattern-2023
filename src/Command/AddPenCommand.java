@@ -19,7 +19,7 @@ public class AddPenCommand implements Command {
         System.out.println("点单:" + addPen.getDescription());
     }
 
-    public Book getMyBook() {
+    public Book myBook() {
         return addPen;
     }
 

@@ -1,6 +1,4 @@
 package Command;
-
-//import Decorator_new.MathBook;
 import Decorator.StudyMaterialDecorator;
 import Decorator.Book;
 import Decorator.Card;
@@ -20,7 +18,7 @@ public class AddCardCommand implements Command {
         System.out.println("点单:" + addCard.getDescription());
     }
 
-    public Book getMyBook() {
+    public Book myBook() {
         return myBook;
     }
 

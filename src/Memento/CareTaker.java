@@ -25,7 +25,7 @@ public class CareTaker {
     public Command undo() {
         Command lastCommand=commands.getLast();
         if (mementoIndex > 0) {
-            Book book = commands.getLast().getMyBook();
+            Book book = commands.getLast().myBook();
             redoCommands.push(commands.pop());
             mementoIndex--;
             book.studyMaterials = bookOrderList.get(mementoIndex).getStudyMaterials();

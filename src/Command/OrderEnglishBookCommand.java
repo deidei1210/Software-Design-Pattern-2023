@@ -13,7 +13,7 @@ public class OrderEnglishBookCommand implements Command {
     }
 
     @Override
-    public Book getMyBook() {
+    public Book myBook() {
         return myEnglishBook;
     }
     @Override

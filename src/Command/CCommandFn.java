@@ -41,7 +41,7 @@ public class CCommandFn {
                     CareTaker orderList = new CareTaker();
                     Command orderMathBook = new OrderMathBookCommand();
                     orderMathBook.execute();
-                    Book myMathBook = orderMathBook.getMyBook();
+                    Book myMathBook = orderMathBook.myBook();
                     orderList.append(orderMathBook, myMathBook.createMemento());
                     money+= orderMathBook.getPrice();  //总花费加上数学书的价格
                     System.out.println("您目前的总价为: " + money);
@@ -56,7 +56,7 @@ public class CCommandFn {
                     CareTaker orderList = new CareTaker();
                     Command orderPoliticBook = new OrderPoliticBookCommand();
                     orderPoliticBook.execute();
-                    Book myPoliticBook = orderPoliticBook.getMyBook();
+                    Book myPoliticBook = orderPoliticBook.myBook();
                     orderList.append(orderPoliticBook, myPoliticBook.createMemento());
                     money+= orderPoliticBook.getPrice();  //总花费加上数学书的价格
                     System.out.println("您目前的总价为: " + money);
@@ -71,7 +71,7 @@ public class CCommandFn {
                     CareTaker orderList = new CareTaker();
                     Command orderEnglishBook = new OrderEnglishBookCommand();
                     orderEnglishBook.execute();
-                    Book myEnglishBook = orderEnglishBook.getMyBook();
+                    Book myEnglishBook = orderEnglishBook.myBook();
                     orderList.append(orderEnglishBook, myEnglishBook.createMemento());
                     money+= orderEnglishBook.getPrice();  //总花费加上数学书的价格
                     System.out.println("您目前的总价为: " + money);

@@ -6,7 +6,7 @@ public interface Command {
     //命令模式接口
     void execute() throws InterruptedException;
 
-    Book getMyBook();
+    Book myBook();
 
     int getPrice();
 }
