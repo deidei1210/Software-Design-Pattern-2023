@@ -6,7 +6,7 @@ import Servant.Preparation;
 
 public class Competition extends Exam implements Preparation {
 
-    private Competitors competitors;
+    private final Competitors competitors;
 
     public Competition(String Name) {
         super(Name);
