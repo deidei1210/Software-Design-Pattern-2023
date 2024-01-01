@@ -25,7 +25,7 @@ import TemplateAndStrategy.AdvancedMath;
 import TemplateAndStrategy.CollegeEnglish;
 import TemplateAndStrategy.CollegePolitics;
 import TemplateAndStrategy.ComputerBasics;
-import Visitor.CVisitorFn;
+import Visitor.VisitorFunction;
 
 import java.util.Scanner;
 
@@ -257,7 +257,7 @@ public class PeakPostgraduateEntranceExamCloud {
                         System.out.println("该考试尚未开始！");
                         break;
                     }
-                    CVisitorFn.VisitorFn(n, exam);
+                    VisitorFunction.visitorFunction(n, exam);
                     break;
                 case 4:
                     System.out.println("欢迎光临你这个年纪怎么睡得着觉学习装备顶峰考研云指定合作伙伴专卖店！");
@@ -294,7 +294,7 @@ public class PeakPostgraduateEntranceExamCloud {
                     break;
                 case 6:
                     try {
-                        PrototypeFunction.PrototypeFn();
+                        PrototypeFunction.prototypeFunction();
                     } catch (CloneNotSupportedException e) {
                         e.printStackTrace();
                     }

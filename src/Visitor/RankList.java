@@ -3,10 +3,10 @@ package Visitor;
 import java.util.ArrayList;
 import java.util.List;
 
-//大厅类
-public class Hall {
+//排名表类
+public class RankList {
     //排名列表
-    public List<Element> rankingList = new ArrayList<Element>();
+    public List<Element> rankingList = new ArrayList<>();
 
     //添加排名
     public void addElement(Element element) {

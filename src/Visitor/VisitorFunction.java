@@ -4,10 +4,10 @@ import Builder.Exam;
 import Iterator.ExamContainer;
 import Iterator.StudentContainer;
 
-public class CVisitorFn {
-    public static void VisitorFn(int student, Exam exam) {
-        Hall hall = new Hall();
-        //添加模拟运动员排名信息
+public class VisitorFunction {
+    public static void visitorFunction(int student, Exam exam) {
+        RankList rankList = new RankList();
+        //添加模拟学生排名信息
         int no = 0;
         switch (exam.getName()) {
             case "高等数学":
@@ -22,16 +22,16 @@ public class CVisitorFn {
                 no = 3;
                 break;
         }
-        hall.addElement(new RankingList(exam.getName(), StudentContainer.getInstance().get(student).getStudentName(),
+        rankList.addElement(new RankingList(exam.getName(), StudentContainer.getInstance().get(student).getStudentName(),
                 ExamContainer.getInstance().get(no).getStudentRank(student)+1));
 
-        Audience audience = new Audience();
+        RankViewingStudent rankViewingStudent = new RankViewingStudent();
         //观众访问大厅
-        hall.show(audience);
+        rankList.show(rankViewingStudent);
 
-        audience.getCertainItem();
-        audience.getCertainName();
-        audience.getCertainRanking();
+        rankViewingStudent.getCertainItem();
+        rankViewingStudent.getCertainName();
+        rankViewingStudent.getCertainRanking();
 
 
     }

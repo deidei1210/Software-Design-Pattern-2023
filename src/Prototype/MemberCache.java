@@ -6,7 +6,7 @@ public class MemberCache {
     private static final Hashtable<String, Member> memberHashtable
             = new Hashtable<>();
 
-    //复制粉丝
+    //复制学生
     public static Member getMember(String memberId) {
         Member cachedMember = memberHashtable.get(memberId);
         return (Member) cachedMember.clone();

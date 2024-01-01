@@ -46,7 +46,7 @@ import Servant.Preparation;
 import SimpleFactory.Student;
 import SimpleFactory.StudentFactory;
 import TransferObject.StudentBO;
-import Visitor.CVisitorFn;
+import Visitor.VisitorFunction;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -491,7 +491,7 @@ public class MainTest {
         System.out.println("类：Visitor");
         System.out.println("实现接口：Visitor.getAudience(String audienceId)");
         System.out.println("测试信息：");
-        CVisitorFn.VisitorFn(0, ExamContainer.getInstance().get(0));
+        VisitorFunction.visitorFunction(0, ExamContainer.getInstance().get(0));
         System.out.println();
         waitForEnter();
 

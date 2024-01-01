@@ -5,9 +5,9 @@ public class MathMember extends Member {
         this.subject = this.getClass().toString();
     }
 
-    public MathMember(String nation) {
+    public MathMember(String school) {
         this.subject = this.getClass().toString();
-        this.school =nation;
+        this.school =school;
     }
 
     @Override

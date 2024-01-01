@@ -5,9 +5,9 @@ public class PoliticsMember extends Member {
         this.subject = this.getClass().toString();
     }
 
-    public PoliticsMember(String nation) {
+    public PoliticsMember(String school) {
         this.subject = this.getClass().toString();
-        this.school =nation;
+        this.school =school;
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class PrototypeFunction {
-    public static void PrototypeFn() throws CloneNotSupportedException {
+    public static void prototypeFunction() throws CloneNotSupportedException {
         MemberCache.loadCache();
 
         System.out.println("请选择想要访问的学习小组的学科：\"Math\" \"English\" \"Politics\"" );

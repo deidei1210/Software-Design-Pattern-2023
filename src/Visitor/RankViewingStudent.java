@@ -1,7 +1,7 @@
 package Visitor;
 
-//观众类，排名查看者的类
-public class Audience implements RankingViewer {
+//观察者类，排名查看者的类
+public class RankViewingStudent implements RankingViewer {
     private String certainItem;
 
     private String certainName;
@@ -21,7 +21,7 @@ public class Audience implements RankingViewer {
         return certainItem;
     }
 
-    //查看运动员
+    //查看学生
     public String getCertainName() {
         System.out.println("所查看学生姓名为：" + certainName);
         return certainName;
