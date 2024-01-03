@@ -39,6 +39,7 @@ import Mediator.ConcreteOthers;
 import NullObject.AbstractCustomer;
 import NullObject.CustomerFactory;
 import Flyweight.AttributeFactory;
+import Observer.ScoreSubject;
 import Prototype.EnglishMember;
 import Proxy.ProxyScoreSheet;
 import Proxy.ScoreSheet;
@@ -49,6 +50,7 @@ import TransferObject.StudentBO;
 import Visitor.VisitorFunction;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -304,7 +306,24 @@ public class MainTest {
         System.out.println("原始数据：");
 
         //TODO:尚待思考怎么写
+        // 获取第一个学生的实例
+        student = StudentContainer.getInstance().get(0);
+        System.out.println("原始数据：");
+        System.out.println("学生排名：" + Arrays.toString(student.getRank()));
+        System.out.println("学生分数：" + Arrays.toString(student.getScore()));
 
+        // 模拟考试排名和分数的变化
+        int game = 1; // 假设是第一个考试
+        int[] rank = new int[] {2}; // 假设学生的新排名是2
+        double[] score = new double[] {95.0}; // 假设学生的新分数是95.0
+
+        // 通知观察者（学生）关于排名和分数的变化
+        ScoreSubject.getInstance().notifyObserver(game, rank, score);
+
+        // 检查更新后的数据
+        System.out.println("更新后的数据：");
+        System.out.println("学生排名：" + Arrays.toString(student.getRank()));
+        System.out.println("学生分数：" + Arrays.toString(student.getScore()));
 
 
         waitForEnter();
